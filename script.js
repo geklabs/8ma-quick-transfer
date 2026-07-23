@@ -22,6 +22,14 @@
     });
   });
 
+  document.querySelectorAll('a[href^="https://t.8ma.co"]').forEach((link) => {
+    const target = new URL(link.href);
+    if (target.pathname === "/" && !target.searchParams.has("from")) {
+      target.searchParams.set("from", "promotion");
+      link.href = target.toString();
+    }
+  });
+
   const year = document.querySelector("[data-current-year]");
   if (year) year.textContent = String(new Date().getFullYear());
 })();

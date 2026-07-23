@@ -845,6 +845,214 @@ h2 {
   margin-top: 18px;
 }
 
+.press-page {
+  width: var(--page);
+  margin: 0 auto;
+}
+
+.press-hero {
+  min-height: 610px;
+  padding: clamp(80px, 11vw, 150px) 0 90px;
+  display: grid;
+  align-content: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.press-hero h1 {
+  max-width: 15ch;
+}
+
+.press-hero > p:not(.section-kicker) {
+  max-width: 60ch;
+  margin: 28px 0 34px;
+  color: var(--muted);
+  font-size: 19px;
+  line-height: 1.75;
+}
+
+.press-hero .primary-cta {
+  justify-self: start;
+}
+
+.press-section {
+  padding: clamp(76px, 10vw, 132px) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.press-heading {
+  margin-bottom: 44px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+}
+
+.press-heading h2 {
+  max-width: 20ch;
+}
+
+.asset-grid--logo {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 2fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+.logo-preview {
+  min-height: 310px;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: var(--blue);
+  border-radius: var(--radius-l);
+}
+
+.logo-preview img {
+  filter: drop-shadow(5px 5px 0 color-mix(in oklch, var(--ink) 35%, transparent));
+}
+
+.asset-copy {
+  padding: 36px;
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.asset-copy p {
+  max-width: 48ch;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.asset-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+.asset-gallery article {
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+}
+
+.asset-gallery article:last-child {
+  grid-column: 1 / -1;
+}
+
+.asset-gallery img {
+  width: 100%;
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
+  object-position: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.asset-gallery article:last-child img {
+  aspect-ratio: 16 / 7;
+}
+
+.asset-gallery .asset-card--portrait img {
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  padding: 22px;
+  background: color-mix(in oklch, var(--canvas) 70%, var(--paper));
+}
+
+.asset-gallery article > div {
+  min-height: 78px;
+  padding: 17px 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 4px 18px;
+}
+
+.asset-gallery span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.asset-gallery a {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  color: var(--blue-deep);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+.screenshot-grid a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.screenshot-grid img {
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.video-asset video {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-m);
+  background: var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.video-asset > div {
+  margin-top: 24px;
+  display: flex;
+  gap: 24px;
+}
+
+.video-asset a {
+  color: var(--blue-deep);
+  font-weight: 800;
+}
+
+.copy-library {
+  border-top: 1px solid var(--line);
+}
+
+.copy-library article {
+  padding: 30px 0;
+  display: grid;
+  grid-template-columns: minmax(150px, .65fr) 2fr;
+  gap: 36px;
+  border-bottom: 1px solid var(--line);
+}
+
+.copy-library article > span {
+  color: var(--blue-deep);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.copy-library p,
+.copy-library ul {
+  max-width: 68ch;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.copy-library ul {
+  padding-left: 1.2em;
+}
+
 .not-found {
   min-height: 100svh;
   padding: 32px;
@@ -1110,6 +1318,35 @@ h2 {
 
   .guide-page h1 {
     font-size: 36px;
+  }
+
+  .press-hero {
+    min-height: auto;
+    padding: 70px 0;
+  }
+
+  .press-heading,
+  .asset-grid--logo,
+  .asset-gallery,
+  .screenshot-grid,
+  .copy-library article {
+    grid-template-columns: 1fr;
+  }
+
+  .asset-gallery article:last-child {
+    grid-column: auto;
+  }
+
+  .asset-gallery article:last-child img {
+    aspect-ratio: 1200 / 630;
+  }
+
+  .asset-gallery .asset-card--portrait img {
+    aspect-ratio: 4 / 5;
+  }
+
+  .copy-library article {
+    gap: 14px;
   }
 }
 

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>8码快传推广图</title>
+    <link rel="stylesheet" href="./poster.css">
+  </head>
+  <body>
+    <main id="poster">
+      <header>
+        <div class="brand"><img src="../../assets/logo.svg" alt=""><strong data-copy="brand">8码快传</strong></div>
+        <span class="free" data-copy="free">免费使用</span>
+      </header>
+      <div class="message">
+        <p class="kicker" data-copy="kicker">方便、安全、快速地传文件</p>
+        <h1 data-copy="headline">大文件，直接发过去。</h1>
+        <p class="subhead" data-copy="subhead">无需注册登录，电脑和手机打开浏览器就能用。</p>
+      </div>
+      <figure>
+        <img data-shot src="../../assets/screenshots/product-share-zh.png" alt="">
+      </figure>
+      <div class="wifi" data-copy="wifi">同一 WiFi，双方打开网站即可互传</div>
+      <footer>
+        <div><strong>t.8ma.co</strong><span data-copy="fact">桌面 Chrome / Edge 单文件最高 100 GB</span></div>
+        <div class="code">8MA4 T2X7</div>
+      </footer>
+    </main>
+    <script>
+      const params = new URLSearchParams(location.search);
+      const format = params.get("format") || "horizontal";
+      const language = params.get("lang") || "zh";
+      const copy = language === "en" ? {
+        brand: "8ma Transfer",
+        free: "Free to use",
+        kicker: "Fast, convenient file transfer",
+        headline: "Move big files without the upload wait.",
+        subhead: "No sign-up. Open it in a browser on your phone or computer.",
+        wifi: "On the same WiFi, open the site on both devices.",
+        fact: "Up to 100 GB per file on desktop Chrome or Edge"
+      } : {
+        brand: "8码快传",
+        free: "免费使用",
+        kicker: "方便、安全、快速地传文件",
+        headline: "大文件，直接发过去。",
+        subhead: "无需注册登录，电脑和手机打开浏览器就能用。",
+        wifi: "同一 WiFi，双方打开网站即可互传",
+        fact: "桌面 Chrome / Edge 单文件最高 100 GB"
+      };
+      document.documentElement.lang = language === "en" ? "en" : "zh-CN";
+      document.getElementById("poster").className = format;
+      document.querySelectorAll("[data-copy]").forEach((element) => {
+        element.textContent = copy[element.dataset.copy];
+      });
+      document.querySelector("[data-shot]").src = language === "en"
+        ? "../../assets/screenshots/product-home-en.png"
+        : "../../assets/screenshots/product-share-zh.png";
+    </script>
+  </body>
+</html>

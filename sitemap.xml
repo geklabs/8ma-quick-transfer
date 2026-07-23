@@ -113,6 +113,22 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/guides/send-large-files-without-messaging-app/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/guides/send-large-files-without-messaging-app/"/>
   </url>
+  <url>
+    <loc>https://t.8ma.co/about/press/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/press/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/press/"/>
+  </url>
+  <url>
+    <loc>https://t.8ma.co/about/en/press/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/press/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/press/"/>
+  </url>
   <url><loc>https://t.8ma.co/about/privacy.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
   <url><loc>https://t.8ma.co/about/terms.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
   <url><loc>https://t.8ma.co/about/en/privacy.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
