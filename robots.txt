@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://geklabs.github.io/8ma-quick-transfer/sitemap.xml
+Sitemap: https://t.8ma.co/about/sitemap.xml
 
