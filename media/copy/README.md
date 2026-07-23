@@ -12,6 +12,19 @@
 - 演示视频：`../../assets/promo/quick-transfer-demo.mp4`
 - 演示 GIF：`../../assets/promo/quick-transfer-demo.gif`
 
+平台文案：
+
+- `alternativeto.md`
+- `saashub.md`
+- `startup-buffer.md`
+- `product-hunt.md`
+- `reddit.md`
+- `v2ex.md`
+- `x.md`
+- `xiaohongshu.md`
+- `zhihu.md`
+- `bilibili.md`
+
 公开表述边界：
 
 - 可以写免费、无需注册登录、无需安装、同一 WiFi 电脑手机互传。
