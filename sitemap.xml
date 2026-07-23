@@ -17,9 +17,56 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/"/>
   </url>
+  <url>
+    <loc>https://t.8ma.co/about/guides/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/guides/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/guides/"/>
+  </url>
+  <url>
+    <loc>https://t.8ma.co/about/en/guides/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/guides/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/guides/"/>
+  </url>
+  <url>
+    <loc>https://t.8ma.co/about/guides/fast-large-file-transfer/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/guides/fast-large-file-transfer/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/guides/fast-large-file-transfer/"/>
+  </url>
+  <url>
+    <loc>https://t.8ma.co/about/en/guides/fast-large-file-transfer/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/guides/fast-large-file-transfer/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/guides/fast-large-file-transfer/"/>
+  </url>
+  <url>
+    <loc>https://t.8ma.co/about/guides/same-wifi-file-transfer/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/guides/same-wifi-file-transfer/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/guides/same-wifi-file-transfer/"/>
+  </url>
+  <url>
+    <loc>https://t.8ma.co/about/en/guides/same-wifi-file-transfer/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/guides/same-wifi-file-transfer/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/guides/same-wifi-file-transfer/"/>
+  </url>
   <url><loc>https://t.8ma.co/about/privacy.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
   <url><loc>https://t.8ma.co/about/terms.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
   <url><loc>https://t.8ma.co/about/en/privacy.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
   <url><loc>https://t.8ma.co/about/en/terms.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
 </urlset>
-

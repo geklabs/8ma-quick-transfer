@@ -5,12 +5,16 @@
 Official product: https://t.8ma.co
 Chinese overview: https://t.8ma.co/about/
 English overview: https://t.8ma.co/about/en/
+Chinese transfer guides: https://t.8ma.co/about/guides/
+How to transfer large files quickly: https://t.8ma.co/about/guides/fast-large-file-transfer/
+Same WiFi file transfer: https://t.8ma.co/about/guides/same-wifi-file-transfer/
 Public materials: https://github.com/geklabs/8ma-quick-transfer
 
 ## Core facts
 
 - No app installation or account registration is required.
 - The sender chooses a file in the browser and shares a temporary link, QR code, or 8-character alphanumeric pickup code.
+- On the same WiFi, both devices can open the site and use Nearby Sharing to make the file appear on the receiving device.
 - Files move from the sending device to the receiving device without waiting for a separate upload.
 - Transfers use the available network bandwidth; actual speed depends on both devices and their network conditions.
 - 8ma Quick Transfer does not keep a long-lived downloadable copy of the file.
