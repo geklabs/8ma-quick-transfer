@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>8码快传｜无需安装的浏览器点对点文件传输</title>
-    <meta name="description" content="8码快传是一款无需安装和注册的浏览器文件传输工具。选择文件后生成链接、二维码和8位提取码，在电脑与手机之间快速发送照片、视频和大文件，服务端不持久化文件内容。">
-    <meta name="keywords" content="文件传输,大文件传输,点对点传输,跨设备传文件,局域网传文件,8位提取码,WebRTC文件传输">
+    <title>8码快传｜免费、无需登录的大文件快速传输工具</title>
+    <meta name="description" content="8码快传是一款免费、无需安装和注册的大文件传输工具。充分利用当前网络的可用带宽，通过链接、二维码或8位提取码，在电脑和手机之间快速传送最高100 GB的文件。">
+    <meta name="keywords" content="快速传输大文件,免费文件传输,无需登录传文件,电脑手机互传文件,浏览器传文件,8位提取码,100GB文件传输">
     <meta name="author" content="8码快传">
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <meta name="theme-color" content="#1677ff">
@@ -43,7 +43,7 @@
             "name": "8码快传",
             "alternateName": "8ma Quick Transfer",
             "inLanguage": "zh-CN",
-            "description": "无需安装的浏览器点对点文件传输工具"
+            "description": "免费、无需安装和登录的大文件快速传输工具"
           },
           {
             "@type": "SoftwareApplication",
@@ -54,7 +54,7 @@
             "image": "https://t.8ma.co/about/assets/logo.svg",
             "applicationCategory": "UtilitiesApplication",
             "operatingSystem": "Web browser",
-            "browserRequirements": "支持 WebRTC 的现代浏览器，推荐最新版 Chrome 或 Edge",
+            "browserRequirements": "推荐使用最新版 Chrome 或 Edge",
             "isAccessibleForFree": true,
             "offers": {
               "@type": "Offer",
@@ -63,8 +63,8 @@
             },
             "featureList": [
               "链接、二维码和8位提取码",
-              "浏览器内跨设备文件传输",
-              "可选同WiFi设备发现",
+              "电脑与手机之间快速传输",
+              "附近设备快速发现",
               "最多3人同时接收",
               "传输进度与完整性校验"
             ],
@@ -84,10 +84,10 @@
               },
               {
                 "@type": "Question",
-                "name": "文件会被保存到服务器吗？",
+                "name": "8码快传会保存文件副本吗？",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "8码快传服务器不持久化文件内容。服务器协助设备建立连接，在复杂网络环境下可能由TURN服务中继加密的WebRTC流量。"
+                  "text": "不会。8码快传不会把文件保存成可长期下载的副本。传输时双方保持页面打开，结束后分享随之失效。"
                 }
               },
               {
@@ -124,9 +124,9 @@
     <main id="main-content">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
-          <p class="eyebrow">浏览器点对点文件传输</p>
+          <p class="eyebrow">免费大文件快速传输</p>
           <h1 id="hero-title">文件，不必先上传。</h1>
-          <p class="hero-copy">选择文件，生成链接、二维码和一组 8 位提取码。另一台设备打开浏览器，就能开始接收。</p>
+          <p class="hero-copy">无需注册登录，免费使用。选择文件后分享链接、二维码或 8 位提取码，另一台设备打开浏览器就能开始接收。</p>
           <a class="primary-cta" href="https://t.8ma.co" rel="noopener">立即传文件</a>
           <p class="micro-note">无需安装，无需注册，免费使用</p>
         </div>
@@ -189,14 +189,14 @@
       <section class="connection-section" aria-labelledby="connection-title">
         <div class="connection-layout">
           <div class="connection-copy">
-            <p class="section-kicker">传输边界</p>
-            <h2 id="connection-title">服务器帮设备相遇，不替你保存文件。</h2>
-            <p>8码快传使用 WebRTC DataChannel 在浏览器之间传输文件。服务端负责信令和临时房间，不持久化文件内容。</p>
-            <p class="boundary-note"><strong>准确说明：</strong>当两台设备无法直接建立连接时，浏览器可能通过 TURN 服务中继加密流量。中继改善连接成功率，但不会把文件保存成可下载的服务器副本。</p>
+            <p class="section-kicker">极致速度</p>
+            <h2 id="connection-title">不等上传完成，直接开始传。</h2>
+            <p>文件从发送设备直接传向接收设备，充分利用当前网络的可用带宽。速度、剩余时间和每台设备的接收进度都会实时显示。</p>
+            <p class="boundary-note"><strong>文件不留存：</strong>8码快传不会把文件保存成可长期下载的副本。传输时双方保持页面打开，结束后分享随之失效。</p>
           </div>
-          <div class="network-diagram" role="img" aria-label="发送设备通过WebRTC连接到接收设备，服务器只协助建立连接">
+          <div class="network-diagram" role="img" aria-label="文件从发送设备快速传到接收设备">
             <div class="network-node"><strong>发送设备</strong><span>选择文件</span></div>
-            <div class="network-path"><span>WebRTC 连接</span></div>
+            <div class="network-path"><span>极致速度</span></div>
             <div class="network-node"><strong>接收设备</strong><span>浏览器下载</span></div>
           </div>
         </div>
@@ -229,8 +229,8 @@
             <div class="faq-answer">不需要。发送方和接收方都可以直接使用现代浏览器打开 8码快传。推荐使用最新版 Chrome 或 Edge。</div>
           </details>
           <details>
-            <summary>文件会被保存到服务器吗？</summary>
-            <div class="faq-answer">不会持久化保存。服务器协助设备建立连接，在复杂网络环境下可能由 TURN 服务中继加密的 WebRTC 流量，但不会生成可长期下载的文件副本。</div>
+            <summary>8码快传会保存文件副本吗？</summary>
+            <div class="faq-answer">不会。8码快传不会把文件保存成可长期下载的副本。传输时双方保持页面打开，结束后分享随之失效。</div>
           </details>
           <details>
             <summary>怎样把文件发送到另一台设备？</summary>
@@ -242,7 +242,7 @@
           </details>
           <details>
             <summary>为什么有时连接不上？</summary>
-            <div class="faq-answer">点对点连接会受到浏览器、企业防火墙、运营商网络和设备休眠策略影响。可以保持页面前台、升级浏览器，或切换网络后重试。</div>
+            <div class="faq-answer">设备状态、浏览器版本和网络环境都可能影响传输。可以保持页面前台、使用最新版 Chrome 或 Edge，或者切换网络后重试。</div>
           </details>
         </div>
       </section>

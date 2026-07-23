@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>8ma Quick Transfer | Browser-based peer-to-peer file transfer</title>
-    <meta name="description" content="Send large files between phones and computers without installing an app. 8ma Quick Transfer creates a link, QR code, and temporary 8-character pickup code in your browser.">
-    <meta name="keywords" content="file transfer,large file transfer,peer to peer file transfer,send files between devices,browser file transfer,WebRTC file transfer">
+    <title>8ma Quick Transfer | Free, fast large file transfer with no sign-up</title>
+    <meta name="description" content="Transfer files up to 100 GB between phones and computers for free, with no app install or account. Share a link, QR code, or temporary 8-character pickup code.">
+    <meta name="keywords" content="fast large file transfer,free file transfer,no sign up file transfer,phone to computer file transfer,browser file transfer,100 GB file transfer">
     <meta name="author" content="8ma Quick Transfer">
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <meta name="theme-color" content="#1677ff">
@@ -43,7 +43,7 @@
             "name": "8ma Quick Transfer",
             "alternateName": "8码快传",
             "inLanguage": "en",
-            "description": "Browser-based peer-to-peer file transfer with no app to install"
+            "description": "Free, fast large file transfer with no app install or account"
           },
           {
             "@type": "SoftwareApplication",
@@ -54,7 +54,7 @@
             "image": "https://t.8ma.co/about/assets/logo.svg",
             "applicationCategory": "UtilitiesApplication",
             "operatingSystem": "Web browser",
-            "browserRequirements": "A modern browser with WebRTC support; current Chrome or Edge recommended",
+            "browserRequirements": "Current Chrome or Edge recommended",
             "isAccessibleForFree": true,
             "offers": {
               "@type": "Offer",
@@ -63,8 +63,8 @@
             },
             "featureList": [
               "Share by link, QR code, or 8-character pickup code",
-              "Browser-based transfer between devices",
-              "Optional discovery on the same Wi-Fi network",
+              "Fast transfer between phones and computers",
+              "Quick discovery of nearby devices",
               "Up to three concurrent receivers",
               "Transfer progress and integrity verification"
             ],
@@ -84,10 +84,10 @@
               },
               {
                 "@type": "Question",
-                "name": "Are files stored on a server?",
+                "name": "Does 8ma Quick Transfer keep a copy of the file?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "8ma Quick Transfer does not persist file contents. The service helps devices connect, and encrypted WebRTC traffic may be relayed through TURN when a direct connection is not possible."
+                  "text": "No. 8ma Quick Transfer does not keep a long-lived downloadable copy. Keep both pages open during transfer; the share ends when the session is over."
                 }
               },
               {
@@ -124,9 +124,9 @@
     <main id="main-content">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
-          <p class="eyebrow">Browser-based peer-to-peer file transfer</p>
+          <p class="eyebrow">Fast, free large file transfer</p>
           <h1 id="hero-title">Files do not need an upload first.</h1>
-          <p class="hero-copy">Choose a file and get a link, QR code, and temporary 8-character pickup code. The other device only needs a browser.</p>
+          <p class="hero-copy">No sign-up, no app, and free to use. Choose a file, then share a link, QR code, or temporary 8-character pickup code.</p>
           <a class="primary-cta" href="https://t.8ma.co" rel="noopener">Send a file now</a>
           <p class="micro-note">No install, no account, free to use</p>
         </div>
@@ -189,14 +189,14 @@
       <section class="connection-section" aria-labelledby="connection-title">
         <div class="connection-layout">
           <div class="connection-copy">
-            <p class="section-kicker">Transfer boundary</p>
-            <h2 id="connection-title">The service helps devices meet. It does not keep your file.</h2>
-            <p>8ma Quick Transfer uses a WebRTC DataChannel to move file data between browsers. The service handles signaling and temporary rooms, not persistent file storage.</p>
-            <p class="boundary-note"><strong>The precise version:</strong> if the devices cannot establish a direct connection, the browser may relay encrypted traffic through TURN. Relaying improves connection success without creating a long-lived downloadable copy.</p>
+            <p class="section-kicker">Maximum speed</p>
+            <h2 id="connection-title">Skip the upload. Start transferring.</h2>
+            <p>The file moves straight from the sending device to the receiving device and uses the available network bandwidth. Speed, time remaining, and progress for each receiver stay visible.</p>
+            <p class="boundary-note"><strong>No stored copy:</strong> 8ma Quick Transfer does not keep a long-lived downloadable copy. Keep both pages open during transfer; the share ends when the session is over.</p>
           </div>
-          <div class="network-diagram" role="img" aria-label="A sender connects to a receiver over WebRTC, while the service only helps establish the connection">
+          <div class="network-diagram" role="img" aria-label="A file moves quickly from the sending device to the receiving device">
             <div class="network-node"><strong>Sending device</strong><span>File selected</span></div>
-            <div class="network-path"><span>WebRTC connection</span></div>
+            <div class="network-path"><span>Maximum speed</span></div>
             <div class="network-node"><strong>Receiving device</strong><span>Browser download</span></div>
           </div>
         </div>
@@ -229,8 +229,8 @@
             <div class="faq-answer">No. Senders and receivers can open 8ma Quick Transfer directly in a modern browser. A current version of Chrome or Edge is recommended.</div>
           </details>
           <details>
-            <summary>Are files stored on a server?</summary>
-            <div class="faq-answer">File contents are not stored persistently. The service helps devices connect. Encrypted WebRTC traffic may be relayed through TURN on restrictive networks, but this does not create a long-lived file copy.</div>
+            <summary>Does 8ma Quick Transfer keep a copy of the file?</summary>
+            <div class="faq-answer">No. 8ma Quick Transfer does not keep a long-lived downloadable copy. Keep both pages open during transfer; the share ends when the session is over.</div>
           </details>
           <details>
             <summary>How do I send a file to another device?</summary>
@@ -242,7 +242,7 @@
           </details>
           <details>
             <summary>Why can a connection fail?</summary>
-            <div class="faq-answer">Peer-to-peer connections can be affected by browser versions, company firewalls, carrier networks, and device sleep policies. Keep the page in the foreground, update the browser, or try another network.</div>
+            <div class="faq-answer">Device state, browser version, and network conditions can affect a transfer. Keep the page in the foreground, use the current Chrome or Edge, or try another network.</div>
           </details>
         </div>
       </section>

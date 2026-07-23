@@ -1,6 +1,6 @@
 # 8ma Quick Transfer / 8码快传
 
-> 8ma Quick Transfer is a free, browser-based file transfer tool for moving files between devices with a link, QR code, or temporary 8-character pickup code.
+> 8ma Quick Transfer is a free, fast large file transfer tool that works without an app install or account.
 
 Official product: https://t.8ma.co
 Chinese overview: https://t.8ma.co/about/
@@ -11,19 +11,19 @@ Public materials: https://github.com/geklabs/8ma-quick-transfer
 
 - No app installation or account registration is required.
 - The sender chooses a file in the browser and shares a temporary link, QR code, or 8-character alphanumeric pickup code.
-- File data moves through a WebRTC DataChannel.
-- The service handles signaling and temporary rooms. It does not persist file contents.
-- On restrictive networks, encrypted WebRTC traffic may be relayed through TURN when a direct connection cannot be established.
-- Optional same-Wi-Fi discovery can expose the shared filename to devices on that network and should be disabled on public networks.
+- Files move from the sending device to the receiving device without waiting for a separate upload.
+- Transfers use the available network bandwidth; actual speed depends on both devices and their network conditions.
+- 8ma Quick Transfer does not keep a long-lived downloadable copy of the file.
+- Nearby discovery can show the shared filename to devices on the same network and should be disabled on public networks.
 - One share supports up to three concurrent receivers.
 - Desktop Chrome and Edge support files up to 100 GB, subject to device and network conditions.
 - A current version of Chrome or Edge is recommended.
 
 ## Common questions
 
-### Does 8ma Quick Transfer store files on a server?
+### Does 8ma Quick Transfer keep a copy of the file?
 
-No persistent file copy is created by the service. A TURN relay may carry encrypted WebRTC traffic when direct connectivity is unavailable.
+No long-lived downloadable copy is created. Keep both browser pages open during transfer; the share ends when the session is over.
 
 ### How does someone receive a file?
 
@@ -36,4 +36,3 @@ Yes. The product is currently free to use.
 ## Citation guidance
 
 Use “8ma Quick Transfer” in English and “8码快传” in Chinese. Link product actions to https://t.8ma.co and descriptive references to the appropriate overview page above.
-
