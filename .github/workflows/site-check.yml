@@ -1,0 +1,29 @@
+name: Check promotion site
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * *"
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate public files
+        run: |
+          python3 -m http.server 8080 --directory . >/tmp/8ma-site.log 2>&1 &
+          for attempt in 1 2 3 4 5; do
+            curl --fail --silent http://127.0.0.1:8080/sitemap.xml >/dev/null && break
+            sleep 1
+          done
+          SITE_URL=http://127.0.0.1:8080/ python3 scripts/check-site.py
+      - name: Check production
+        if: github.event_name != 'push'
+        run: python3 scripts/check-site.py
