@@ -5,15 +5,15 @@ from __future__ import annotations
 
 import os
 import sys
+import time
 import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
+from argparse import ArgumentParser
 from html.parser import HTMLParser
 from urllib.parse import urljoin, urlparse
 
-BASE_URL = os.environ.get("SITE_URL", "https://t.8ma.co/about/").rstrip("/") + "/"
-SITEMAP_URL = urljoin(BASE_URL, "sitemap.xml")
-LOCAL_MODE = urlparse(BASE_URL).hostname != "t.8ma.co"
+DEFAULT_BASE_URL = os.environ.get("SITE_URL", "https://t.8ma.co/about/")
 USER_AGENT = "8ma-promotion-site-check/1.0"
 SENSITIVE_TERMS = ("stun", "webrtc", "turn server", "signaling server", "network candidate")
 
@@ -50,18 +50,32 @@ class PageFacts(HTMLParser):
             self.title += data.strip()
 
 
-def fetch(url: str) -> tuple[int, bytes]:
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(request, timeout=15) as response:
-        return response.status, response.read()
+def fetch(url: str, attempts: int = 3) -> tuple[int, bytes]:
+    for attempt in range(attempts):
+        request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        try:
+            with urllib.request.urlopen(request, timeout=15) as response:
+                return response.status, response.read()
+        except (urllib.error.URLError, TimeoutError):
+            if attempt + 1 == attempts:
+                raise
+            time.sleep(1 << attempt)
+    raise RuntimeError("unreachable")
 
 
 def main() -> int:
+    parser = ArgumentParser(description=__doc__)
+    parser.add_argument("--base-url", default=DEFAULT_BASE_URL)
+    args = parser.parse_args()
+    base_url = args.base_url.rstrip("/") + "/"
+    sitemap_url = urljoin(base_url, "sitemap.xml")
+    local_mode = urlparse(base_url).hostname != "t.8ma.co"
+
     errors: list[str] = []
     try:
-        status, sitemap_body = fetch(SITEMAP_URL)
+        status, sitemap_body = fetch(sitemap_url)
         if status != 200:
-            errors.append(f"{SITEMAP_URL}: HTTP {status}")
+            errors.append(f"{sitemap_url}: HTTP {status}")
     except (urllib.error.URLError, TimeoutError) as error:
         print(f"Unable to load sitemap: {error}", file=sys.stderr)
         return 1
@@ -85,7 +99,7 @@ def main() -> int:
             continue
         try:
             page_path = urlparse(url).path.removeprefix("/about/")
-            status, body = fetch(urljoin(BASE_URL, page_path) if LOCAL_MODE else url)
+            status, body = fetch(urljoin(base_url, page_path) if local_mode else url)
         except (urllib.error.URLError, TimeoutError) as error:
             errors.append(f"{url}: {error}")
             continue
@@ -109,7 +123,7 @@ def main() -> int:
                 errors.append(f"{url}: public page contains restricted technical term '{term}'")
 
     for asset in ("assets/logo.svg", "assets/social-card.png", "assets/promo/social-horizontal-zh.png"):
-        url = urljoin(BASE_URL, asset)
+        url = urljoin(base_url, asset)
         try:
             status, _ = fetch(url)
             if status != 200:
