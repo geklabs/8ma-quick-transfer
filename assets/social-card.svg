@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f8f5ec"/>
+  <rect x="54" y="54" width="1092" height="522" rx="28" fill="#1677ff"/>
+  <g fill="none" stroke="#f8f5ec" stroke-width="22">
+    <rect x="104" y="112" width="128" height="88" rx="44"/>
+    <rect x="104" y="188" width="128" height="88" rx="44"/>
+  </g>
+  <text x="280" y="190" fill="#f8f5ec" font-family="Arial, sans-serif" font-size="44" font-weight="800">8码快传</text>
+  <text x="280" y="244" fill="#dce8ff" font-family="Arial, sans-serif" font-size="30">8ma Quick Transfer</text>
+  <text x="104" y="410" fill="#f8f5ec" font-family="Arial, sans-serif" font-size="70" font-weight="900" letter-spacing="-3">文件，不必先上传。</text>
+  <text x="104" y="486" fill="#dce8ff" font-family="Arial, sans-serif" font-size="32">Files do not need an upload first.</text>
+  <circle cx="1060" cy="466" r="18" fill="#ff9650"/>
+</svg>
+
