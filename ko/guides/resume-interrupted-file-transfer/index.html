@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>중단된 대용량 파일 전송 재개 방법 | 8ma</title>
+    <meta name="description" content="새로고침, 네트워크 중단, 페이지 종료 후 대용량 파일 전송을 재개하세요. 8ma Quick Transfer는 전체 파일을 다시 보내지 않고 로컬에 저장된 데이터에서 이어서 전송합니다.">
+    <meta name="keywords" content="중단된 파일 전송 재개,이어받기 가능한 대용량 전송,연결 끊김 후 파일 전송 계속,브라우저 파일 전송 이어하기,대용량 다운로드 재개">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+    <link rel="canonical" href="https://t.8ma.co/about/ko/guides/resume-interrupted-file-transfer/">
+    <link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/guides/resume-interrupted-file-transfer/">
+    <link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/guides/resume-interrupted-file-transfer/">
+    <link rel="alternate" hreflang="es" href="https://t.8ma.co/about/es/guides/resume-interrupted-file-transfer/">
+    <link rel="alternate" hreflang="ar" href="https://t.8ma.co/about/ar/guides/resume-interrupted-file-transfer/">
+    <link rel="alternate" hreflang="hi" href="https://t.8ma.co/about/hi/guides/resume-interrupted-file-transfer/">
+    <link rel="alternate" hreflang="fr" href="https://t.8ma.co/about/fr/guides/resume-interrupted-file-transfer/">
+    <link rel="alternate" hreflang="ja" href="https://t.8ma.co/about/ja/guides/resume-interrupted-file-transfer/">
+    <link rel="alternate" hreflang="ko" href="https://t.8ma.co/about/ko/guides/resume-interrupted-file-transfer/">
+    <link rel="alternate" hreflang="x-default" href="https://t.8ma.co/about/guides/resume-interrupted-file-transfer/">
+
+    <link rel="icon" href="../../../assets/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../../styles.css">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="8ma Quick Transfer">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ar_AR">
+    <meta property="og:locale:alternate" content="hi_IN">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="ja_JP">
+
+    <meta property="og:title" content="중단된 대용량 파일 전송 재개 방법">
+    <meta property="og:description" content="전체 파일을 다시 보내지 않고 로컬에 저장된 데이터에서 이어서 전송합니다.">
+    <meta property="og:url" content="https://t.8ma.co/about/ko/guides/resume-interrupted-file-transfer/">
+    <meta property="og:image" content="https://t.8ma.co/about/assets/social-card.png">
+    <meta property="og:image:alt" content="8ma Quick Transfer는 재개 가능한 대용량 파일 전송을 지원합니다">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="중단된 대용량 파일 전송 재개하기">
+    <meta name="twitter:description" content="전체 파일을 다시 보내지 않고 로컬에 저장된 데이터에서 이어서 전송합니다.">
+    <meta name="twitter:image" content="https://t.8ma.co/about/assets/social-card.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "중단된 대용량 파일 전송 재개 방법",
+        "description": "8ma Quick Transfer로 로컬에 저장된 체크포인트에서 대용량 파일 전송을 이어가는 방법.",
+        "keywords": ["중단된 파일 전송 재개", "이어받기 가능한 대용량 전송", "브라우저 파일 전송 이어하기"],
+        "inLanguage": "ko",
+        "datePublished": "2026-07-23",
+        "dateModified": "2026-07-23",
+        "mainEntityOfPage": "https://t.8ma.co/about/ko/guides/resume-interrupted-file-transfer/",
+        "author": {"@type": "Organization", "name": "8ma Quick Transfer"}
+      }
+    </script>
+    <script src="../../../script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+    <header class="site-header">
+      <a class="brand" href="../../../en/" aria-label="8ma Quick Transfer 개요로 돌아가기">
+        <img src="../../../assets/logo.svg" width="38" height="38" alt="">
+        <span>8ma Quick Transfer</span>
+      </a>
+      <div class="header-actions">
+        <a class="text-link" href="../">가이드</a>
+        <nav class="language-switcher" aria-label="Language">
+          <a href="https://t.8ma.co/about/guides/resume-interrupted-file-transfer/" lang="zh-CN" hreflang="zh-CN" data-language-choice="zh-CN">中文</a><a href="https://t.8ma.co/about/en/guides/resume-interrupted-file-transfer/" lang="en" hreflang="en" data-language-choice="en">English</a><a href="https://t.8ma.co/about/es/guides/resume-interrupted-file-transfer/" lang="es" hreflang="es" data-language-choice="es">Español</a><a href="https://t.8ma.co/about/ar/guides/resume-interrupted-file-transfer/" lang="ar" hreflang="ar" data-language-choice="ar">العربية</a><a href="https://t.8ma.co/about/hi/guides/resume-interrupted-file-transfer/" lang="hi" hreflang="hi" data-language-choice="hi">हिन्दी</a><a href="https://t.8ma.co/about/fr/guides/resume-interrupted-file-transfer/" lang="fr" hreflang="fr" data-language-choice="fr">Français</a><a href="https://t.8ma.co/about/ja/guides/resume-interrupted-file-transfer/" lang="ja" hreflang="ja" data-language-choice="ja">日本語</a><a href="https://t.8ma.co/about/ko/guides/resume-interrupted-file-transfer/" lang="ko" hreflang="ko" data-language-choice="ko" aria-current="page">한국어</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main-content">
+      <article class="legal-page guide-page">
+        <a class="back-link" href="../">← 전송 가이드로 돌아가기</a>
+        <p class="section-kicker">재개 가능한 전송</p>
+        <h1>중단된 대용량 파일 전송을 어떻게 재개하나요?</h1>
+        <p class="guide-lead">네트워크 중단, 페이지 새로고침 또는 일시적인 브라우저 종료가 항상 처음부터 다시 시작해야 한다는 의미는 아닙니다. 지원되는 브라우저에서 8ma Quick Transfer는 수신 기기에 완료된 부분을 유지하고 검증된 체크포인트에서 재개합니다.</p>
+        <div class="guide-answer">
+          <strong>간단한 해결책</strong>
+          <p>원래 보내던 기기에서 이전 공유를 계속 진행하고 동일한 파일을 선택하세요. 수신 기기에서는 원래 링크를 다시 열고 "다운로드 재개"를 선택하세요.</p>
+        </div>
+        <h2>세 단계로 재개하기</h2>
+        <ol>
+          <li>발신자 측에서 8ma Quick Transfer로 돌아가 이전 공유를 위한 원본 파일을 선택하세요.</li>
+          <li>수신 기기에서 원래 링크 또는 픽업 코드 페이지를 다시 여세요.</li>
+          <li>"다운로드 재개"를 선택하세요. 저장된 부분을 확인한 후 전송이 계속됩니다.</li>
+        </ol>
+        <h2>다시 보낼 필요가 없는 데이터는 무엇인가요?</h2>
+        <p>수신 기기에 이미 저장되어 검증된 부분은 다시 보내지 않습니다. 원본 파일과 일치하지 않으면 유효하지 않은 체크포인트는 폐기되므로 수신자가 손상된 파일을 보관하지 않습니다.</p>
+        <h2>발신자가 파일을 다시 선택해야 하는 이유는 무엇인가요?</h2>
+        <p>페이지가 닫히거나 새로고침되면 브라우저는 허가 없이 로컬 파일을 읽을 수 없습니다. 발신자는 원본 파일을 다시 확인하며, 파일 이름, 크기 및 수정 시간이 이전 공유와 일치해야 합니다.</p>
+        <h2>또 다른 중단을 방지하려면 어떻게 해야 하나요?</h2>
+        <ul>
+          <li>양쪽 페이지를 열어 두고 기기가 절전 모드로 전환되지 않도록 하세요.</li>
+          <li>매우 큰 파일의 경우 최신 데스크톱 Chrome 또는 Edge를 사용하세요.</li>
+          <li>안정적인 연결을 선호하며, 동일한 WiFi에서는 주변 공유도 사용할 수 있습니다.</li>
+        </ul>
+        <h2>관련 가이드</h2>
+        <ul>
+          <li><a href="../fast-large-file-transfer/">대용량 파일 빠르게 전송하기</a></li>
+          <li><a href="../browser-file-transfer-without-cloud-upload/">클라우드 업로드 없이 파일 전송하기</a></li>
+          <li><a href="../same-wifi-file-transfer/">동일한 WiFi에서 파일 전송하기</a></li>
+        </ul>
+        <a class="primary-cta" href="https://t.8ma.co" rel="noopener">파일 전송 시작하기</a>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <span>© <span data-current-year>2026</span> 8ma Quick Transfer</span>
+      <nav class="footer-links" aria-label="바닥글">
+        <a href="../fast-large-file-transfer/">대용량 파일</a>
+        <a href="../browser-file-transfer-without-cloud-upload/">클라우드 업로드 없이</a>
+        <a href="../../../en/privacy.html">개인정보처리방침</a>
+      </nav>
+    </footer>
+  </body>
+</html>

@@ -16,6 +16,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+      - name: Validate generator safety
+        run: node scripts/test-generator-validation.mjs
       - name: Validate public files
         run: |
           python3 -m http.server 8080 --directory . >/tmp/8ma-site.log 2>&1 &

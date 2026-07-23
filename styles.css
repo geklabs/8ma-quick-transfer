@@ -140,6 +140,22 @@ a {
   background: var(--paper);
 }
 
+.language-switcher select {
+  max-width: 126px;
+  min-height: 40px;
+  padding: 0 28px 0 10px;
+  border: 0;
+  color: var(--ink);
+  background: transparent;
+  font: 800 12px/1 var(--font-sans);
+  cursor: pointer;
+}
+
+html[dir="rtl"] .language-switcher select {
+  padding-right: 10px;
+  padding-left: 28px;
+}
+
 .language-switcher a {
   min-width: 44px;
   min-height: 40px;

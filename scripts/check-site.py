@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -19,6 +20,17 @@ from urllib.parse import urljoin, urlparse
 DEFAULT_BASE_URL = os.environ.get("SITE_URL", "https://t.8ma.co/about/")
 USER_AGENT = "8ma-promotion-site-check/1.0"
 SENSITIVE_TERMS = ("stun", "webrtc", "turn server", "signaling server", "network candidate")
+SUPPORTED_LANGUAGES = {
+    "en": "en",
+    "es": "es",
+    "ar": "ar",
+    "hi": "hi",
+    "fr": "fr",
+    "ja": "ja",
+    "ko": "ko",
+}
+REQUIRED_HREFLANGS = {"zh-CN", *SUPPORTED_LANGUAGES}
+EXPECTED_PAGES_PER_LANGUAGE = 13
 
 
 class PageFacts(HTMLParser):
@@ -27,14 +39,21 @@ class PageFacts(HTMLParser):
         self.canonical = ""
         self.title = ""
         self.description = ""
+        self.keywords = ""
         self.robots = ""
+        self.language = ""
+        self.open_graph: set[str] = set()
+        self.twitter: set[str] = set()
+        self.json_ld = 0
         self.h1 = 0
         self.alternates: set[str] = set()
         self._in_title = False
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
-        if tag == "title":
+        if tag == "html":
+            self.language = values.get("lang") or ""
+        elif tag == "title":
             self._in_title = True
         elif tag == "h1":
             self.h1 += 1
@@ -44,8 +63,16 @@ class PageFacts(HTMLParser):
             self.alternates.add(values["hreflang"])
         elif tag == "meta" and values.get("name") == "description":
             self.description = values.get("content") or ""
+        elif tag == "meta" and values.get("name") == "keywords":
+            self.keywords = values.get("content") or ""
         elif tag == "meta" and values.get("name") == "robots":
             self.robots = values.get("content") or ""
+        elif tag == "meta" and values.get("property", "").startswith("og:"):
+            self.open_graph.add(values["property"])
+        elif tag == "meta" and values.get("name", "").startswith("twitter:"):
+            self.twitter.add(values["name"])
+        elif tag == "script" and values.get("type") == "application/ld+json":
+            self.json_ld += 1
 
     def handle_endtag(self, tag: str) -> None:
         if tag == "title":
@@ -67,6 +94,27 @@ def fetch(url: str, attempts: int = 3) -> tuple[int, bytes]:
                 raise
             time.sleep(1 << attempt)
     raise RuntimeError("unreachable")
+
+def json_ld_languages(text: str, url: str, errors: list[str]) -> list[str]:
+    languages: list[str] = []
+
+    def walk(value: object) -> None:
+        if isinstance(value, dict):
+            language = value.get("inLanguage")
+            if isinstance(language, str):
+                languages.append(language)
+            for child in value.values():
+                walk(child)
+        elif isinstance(value, list):
+            for child in value:
+                walk(child)
+
+    for body in re.findall(r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>([\s\S]*?)</script>', text, re.IGNORECASE):
+        try:
+            walk(json.loads(body))
+        except json.JSONDecodeError as error:
+            errors.append(f"{url}: invalid JSON-LD ({error})")
+    return languages
 
 
 def main() -> int:
@@ -113,8 +161,9 @@ def main() -> int:
         return finish(1)
 
     report["sitemapPageCount"] = len(urls)
-    if len(urls) < 20:
-        errors.append(f"Sitemap has {len(urls)} URLs; expected at least 20")
+    expected_page_count = EXPECTED_PAGES_PER_LANGUAGE * (len(SUPPORTED_LANGUAGES) + 1)
+    if len(urls) != expected_page_count:
+        errors.append(f"Sitemap has {len(urls)} URLs; expected {expected_page_count}")
     if len(urls) != len(set(urls)):
         errors.append("Sitemap contains duplicate URLs")
 
@@ -134,6 +183,7 @@ def main() -> int:
 
     pages = report["pages"]
     assert isinstance(pages, list)
+    language_page_counts = {language: 0 for language in REQUIRED_HREFLANGS}
     for url in urls:
         page_report: dict[str, object] = {"url": url}
         pages.append(page_report)
@@ -162,7 +212,9 @@ def main() -> int:
         page_report.update({
             "title": facts.title,
             "description": facts.description,
+            "keywords": facts.keywords,
             "canonical": facts.canonical,
+            "language": facts.language,
             "hreflang": sorted(facts.alternates),
             "robots": facts.robots,
             "indexable": "noindex" not in facts.robots.lower(),
@@ -171,16 +223,41 @@ def main() -> int:
             errors.append(f"{url}: canonical is {facts.canonical or 'missing'}")
         if not facts.title or not facts.description:
             errors.append(f"{url}: missing title or description")
+        relative_url_path = urlparse(url).path.removeprefix("/about/").lstrip("/")
+        language_prefix = relative_url_path.split("/", 1)[0]
+        expected_language = SUPPORTED_LANGUAGES.get(language_prefix, "zh-CN")
+        language_page_counts[expected_language] += 1
+        if facts.language != expected_language:
+            errors.append(f"{url}: html lang is {facts.language or 'missing'}, expected {expected_language}")
         if facts.h1 != 1:
             errors.append(f"{url}: expected one h1, found {facts.h1}")
         if "noindex" in facts.robots.lower():
             errors.append(f"{url}: page is marked noindex")
-        if "/privacy" not in url and "/terms" not in url and not {"zh-CN", "en"}.issubset(facts.alternates):
-            errors.append(f"{url}: missing zh-CN/en alternates")
+        if not REQUIRED_HREFLANGS.issubset(facts.alternates):
+            missing = ", ".join(sorted(REQUIRED_HREFLANGS - facts.alternates))
+            errors.append(f"{url}: missing language alternates: {missing}")
+        if "/privacy" not in url and "/terms" not in url:
+            if not facts.keywords:
+                errors.append(f"{url}: missing localized long-tail keywords")
+            if not {"og:title", "og:description", "og:url", "og:image"}.issubset(facts.open_graph):
+                errors.append(f"{url}: incomplete Open Graph metadata")
+            if not {"twitter:card", "twitter:title", "twitter:description", "twitter:image"}.issubset(facts.twitter):
+                errors.append(f"{url}: incomplete Twitter Card metadata")
+            if facts.json_ld < 1:
+                errors.append(f"{url}: missing structured data")
+            structured_languages = json_ld_languages(text, url, errors)
+            if not structured_languages:
+                errors.append(f"{url}: structured data is missing inLanguage")
+            elif any(language != expected_language for language in structured_languages):
+                errors.append(f"{url}: JSON-LD inLanguage is {structured_languages}, expected {expected_language}")
         lowered = text.lower()
         for term in SENSITIVE_TERMS:
             if term in lowered:
                 errors.append(f"{url}: public page contains restricted technical term '{term}'")
+
+    for language, count in language_page_counts.items():
+        if count != EXPECTED_PAGES_PER_LANGUAGE:
+            errors.append(f"Sitemap has {count} {language} pages; expected {EXPECTED_PAGES_PER_LANGUAGE}")
 
     for asset in ("assets/logo.svg", "assets/social-card.png", "assets/promo/social-horizontal-zh.png"):
         url = urljoin(base_url, asset)

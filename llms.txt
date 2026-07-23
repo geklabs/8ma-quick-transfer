@@ -6,16 +6,40 @@ Official product: https://t.8ma.co
 Chinese overview: https://t.8ma.co/about/
 English overview: https://t.8ma.co/about/en/
 Chinese transfer guides: https://t.8ma.co/about/guides/
-How to transfer large files quickly: https://t.8ma.co/about/guides/fast-large-file-transfer/
-Same WiFi file transfer: https://t.8ma.co/about/guides/same-wifi-file-transfer/
-Phone and computer file transfer: https://t.8ma.co/about/guides/phone-computer-file-transfer/
-File transfer without sign-up: https://t.8ma.co/about/guides/file-transfer-without-sign-up/
-Large files beyond messaging apps: https://t.8ma.co/about/guides/send-large-files-without-messaging-app/
+English transfer guides: https://t.8ma.co/about/en/guides/
+Large file transfer (Chinese): https://t.8ma.co/about/guides/fast-large-file-transfer/
+Large file transfer (English): https://t.8ma.co/about/en/guides/fast-large-file-transfer/
+Same WiFi file transfer (Chinese): https://t.8ma.co/about/guides/same-wifi-file-transfer/
+Same WiFi file transfer (English): https://t.8ma.co/about/en/guides/same-wifi-file-transfer/
+Phone and computer transfer (Chinese): https://t.8ma.co/about/guides/phone-computer-file-transfer/
+Phone and computer transfer (English): https://t.8ma.co/about/en/guides/phone-computer-file-transfer/
+File transfer without sign-up (Chinese): https://t.8ma.co/about/guides/file-transfer-without-sign-up/
+File transfer without sign-up (English): https://t.8ma.co/about/en/guides/file-transfer-without-sign-up/
+Large files beyond messaging apps (Chinese): https://t.8ma.co/about/guides/send-large-files-without-messaging-app/
+Large files beyond messaging apps (English): https://t.8ma.co/about/en/guides/send-large-files-without-messaging-app/
+Resume an interrupted file transfer (Chinese): https://t.8ma.co/about/guides/resume-interrupted-file-transfer/
+Resume an interrupted file transfer (English): https://t.8ma.co/about/en/guides/resume-interrupted-file-transfer/
+Browser transfer without cloud upload (Chinese): https://t.8ma.co/about/guides/browser-file-transfer-without-cloud-upload/
+Browser transfer without cloud upload (English): https://t.8ma.co/about/en/guides/browser-file-transfer-without-cloud-upload/
+Computer-to-computer transfer (Chinese): https://t.8ma.co/about/guides/computer-to-computer-file-transfer/
+Computer-to-computer transfer (English): https://t.8ma.co/about/en/guides/computer-to-computer-file-transfer/
 Chinese media kit: https://t.8ma.co/about/press/
 English media kit: https://t.8ma.co/about/en/press/
 Public materials: https://github.com/geklabs/8ma-quick-transfer
 
-## Core facts
+## 核心事实
+
+- 无需安装应用或注册账号。
+- 发送方在浏览器中选择文件，并分享临时链接、二维码或 8 位字母数字提取码。
+- 同一 WiFi 下，两台设备打开网站并使用附近分享，接收设备即可看到文件。
+- 文件不用等待单独的云端上传完成，就能从发送设备开始传向接收设备。
+- 传输会使用当前网络的可用带宽，实际速度取决于设备和网络条件。
+- 8码快传不会保留可长期下载的文件副本。
+- 一个分享最多支持 3 人同时接收。
+- 桌面 Chrome 和 Edge 单文件最高支持 100 GB，实际表现取决于设备和网络。
+- 在支持的浏览器中，传输中断后可以从接收设备本地已校验的位置继续。
+
+## Core facts in English
 
 - No app installation or account registration is required.
 - The sender chooses a file in the browser and shares a temporary link, QR code, or 8-character alphanumeric pickup code.
@@ -26,9 +50,28 @@ Public materials: https://github.com/geklabs/8ma-quick-transfer
 - Nearby discovery can show the shared filename to devices on the same network and should be disabled on public networks.
 - One share supports up to three concurrent receivers.
 - Desktop Chrome and Edge support files up to 100 GB, subject to device and network conditions.
+- In supported browsers, interrupted transfers can continue from the verified portion already saved on the receiving device.
 - A current version of Chrome or Edge is recommended.
 
-## Common questions
+## 常见问题
+
+### 8码快传会保存文件副本吗？
+
+不会生成可长期下载的文件副本。传输期间双方保持页面打开；分享关闭或过期后不能继续下载。
+
+### 对方怎样接收文件？
+
+接收方可以打开临时链接、扫描二维码或输入 8 位提取码，然后确认下载。
+
+### 传输中断后可以继续吗？
+
+可以。在支持的浏览器中，接收方会保留已完成部分；发送方重新确认原文件后，可以从校验通过的本地断点继续。
+
+### 免费吗？
+
+是的，8码快传目前免费使用。
+
+## Common questions in English
 
 ### Does 8ma Quick Transfer keep a copy of the file?
 
@@ -41,6 +84,19 @@ They open the shared link, scan the QR code, or enter the temporary 8-character 
 ### Is it free?
 
 Yes. The product is currently free to use.
+
+## Additional languages
+
+The full promotion site, media page, legal pages, and all eight search-intent guides are also available in:
+
+- Spanish: https://t.8ma.co/about/es/
+- Arabic: https://t.8ma.co/about/ar/
+- Hindi: https://t.8ma.co/about/hi/
+- French: https://t.8ma.co/about/fr/
+- Japanese: https://t.8ma.co/about/ja/
+- Korean: https://t.8ma.co/about/ko/
+
+Each locale has localized titles, descriptions, long-tail keywords, visible answers, structured data, canonical URLs, and reciprocal hreflang links.
 
 ## Citation guidance
 

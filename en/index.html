@@ -1,18 +1,25 @@
 <!doctype html>
-<html lang="en" data-alternate-path="../">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>8ma Quick Transfer | Free, fast large file transfer with no sign-up</title>
-    <meta name="description" content="Transfer files up to 100 GB for free, with no app or account. On the same WiFi, open the site on a computer and phone to share nearby, or use a link, QR code, or 8-character pickup code.">
-    <meta name="keywords" content="fast large file transfer,free file transfer,no sign up file transfer,same WiFi file transfer,phone to computer file transfer,browser file transfer,100 GB file transfer">
+    <meta name="description" content="Transfer files up to 100 GB for free, with no app or account. Share on the same WiFi or use a link, QR code, or pickup code. Interrupted transfers can resume from locally saved data.">
+    <meta name="keywords" content="fast large file transfer,free file transfer,no sign up file transfer,same WiFi file transfer,phone to computer file transfer,browser file transfer,resume interrupted file transfer,file transfer without cloud upload,100 GB file transfer">
     <meta name="author" content="8ma Quick Transfer">
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <meta name="theme-color" content="#1677ff">
     <link rel="canonical" href="https://t.8ma.co/about/en/">
     <link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/">
     <link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/">
+    <link rel="alternate" hreflang="es" href="https://t.8ma.co/about/es/">
+    <link rel="alternate" hreflang="ar" href="https://t.8ma.co/about/ar/">
+    <link rel="alternate" hreflang="hi" href="https://t.8ma.co/about/hi/">
+    <link rel="alternate" hreflang="fr" href="https://t.8ma.co/about/fr/">
+    <link rel="alternate" hreflang="ja" href="https://t.8ma.co/about/ja/">
+    <link rel="alternate" hreflang="ko" href="https://t.8ma.co/about/ko/">
     <link rel="alternate" hreflang="x-default" href="https://t.8ma.co/about/">
+
     <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../assets/logo.svg">
     <link rel="manifest" href="../site.webmanifest">
@@ -21,6 +28,13 @@
     <meta property="og:site_name" content="8ma Quick Transfer">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ar_AR">
+    <meta property="og:locale:alternate" content="hi_IN">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="ko_KR">
+
     <meta property="og:title" content="8ma Quick Transfer | Files do not need an upload first">
     <meta property="og:description" content="Open a browser and move a file between devices with a link, QR code, or temporary 8-character pickup code.">
     <meta property="og:url" content="https://t.8ma.co/about/en/">
@@ -66,7 +80,8 @@
               "Fast transfer between phones and computers",
               "Open the site on the same WiFi to discover nearby shares",
               "Up to three concurrent receivers",
-              "Transfer progress and integrity verification"
+              "Transfer progress and integrity verification",
+              "Resume interrupted transfers from locally saved data"
             ],
             "sameAs": ["https://github.com/geklabs/8ma-quick-transfer"]
           },
@@ -97,6 +112,14 @@
                   "@type": "Answer",
                   "text": "On the same WiFi, open the site on both devices and enable Nearby Sharing on the sender. The receiving device can then see the file. A link, QR code, or 8-character pickup code also works."
                 }
+              },
+              {
+                "@type": "Question",
+                "name": "Can an interrupted large file transfer resume?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. In supported browsers, the receiver keeps the completed portion locally. After the sender confirms the original file again, the transfer can continue from a verified checkpoint."
+                }
               }
             ]
           }
@@ -116,8 +139,7 @@
         <a class="text-link" href="./guides/">Guides</a>
         <a class="text-link" href="./press/">Media kit</a>
         <nav class="language-switcher" aria-label="Language">
-          <a href="../" lang="zh-CN" hreflang="zh-CN" data-language-choice="zh">中</a>
-          <a href="./" aria-current="page" data-language-choice="en">EN</a>
+          <a href="https://t.8ma.co/about/" lang="zh-CN" hreflang="zh-CN" data-language-choice="zh-CN">中文</a><a href="https://t.8ma.co/about/en/" lang="en" hreflang="en" data-language-choice="en" aria-current="page">English</a><a href="https://t.8ma.co/about/es/" lang="es" hreflang="es" data-language-choice="es">Español</a><a href="https://t.8ma.co/about/ar/" lang="ar" hreflang="ar" data-language-choice="ar">العربية</a><a href="https://t.8ma.co/about/hi/" lang="hi" hreflang="hi" data-language-choice="hi">हिन्दी</a><a href="https://t.8ma.co/about/fr/" lang="fr" hreflang="fr" data-language-choice="fr">Français</a><a href="https://t.8ma.co/about/ja/" lang="ja" hreflang="ja" data-language-choice="ja">日本語</a><a href="https://t.8ma.co/about/ko/" lang="ko" hreflang="ko" data-language-choice="ko">한국어</a>
         </nav>
       </div>
     </header>
@@ -215,6 +237,7 @@
           <div class="fact-row"><dt>Same WiFi transfer</dt><dd>Open the site on a computer and phone, then enable Nearby Sharing to discover the file; keep it off on public networks</dd></div>
           <div class="fact-row"><dt>Receivers</dt><dd>Up to three people can receive at once, with separate progress for each device</dd></div>
           <div class="fact-row"><dt>Large files</dt><dd>Up to 100 GB per file in desktop Chrome and Edge; actual results depend on device and network conditions</dd></div>
+          <div class="fact-row"><dt>Resume</dt><dd>Supported browsers can continue an interrupted transfer from data already saved on the receiving device</dd></div>
           <div class="fact-row"><dt>Recommended setup</dt><dd>Use a current version of Chrome or Edge and keep both pages open during transfer</dd></div>
         </dl>
       </section>
@@ -244,6 +267,10 @@
           <details>
             <summary>Why can a connection fail?</summary>
             <div class="faq-answer">Device state, browser version, and network conditions can affect a transfer. Keep the page in the foreground, use the current Chrome or Edge, or try another network.</div>
+          </details>
+          <details>
+            <summary>Do I need to start over after an interruption?</summary>
+            <div class="faq-answer">Not always. Supported browsers keep the completed portion on the receiving device. Once the sender confirms the original file again, the receiver can continue from a verified checkpoint.</div>
           </details>
         </div>
       </section>

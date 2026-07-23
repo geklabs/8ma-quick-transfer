@@ -1,10 +1,16 @@
 (function () {
-  const preferenceKey = "8ma-promo-language";
-  const currentLanguage = document.documentElement.lang.startsWith("zh") ? "zh" : "en";
-  const storedLanguage = localStorage.getItem(preferenceKey);
-  const primaryBrowserLanguage = (navigator.languages?.[0] || navigator.language || "").toLowerCase();
-  const browserLanguage = primaryBrowserLanguage.startsWith("zh") ? "zh" : "en";
-  const alternatePath = document.documentElement.dataset.alternatePath;
+  const supportedLanguages = ["zh-CN", "en", "es", "ar", "hi", "fr", "ja", "ko"];
+  const currentLanguage = document.documentElement.lang;
+  const browserLanguages = navigator.languages?.length ? navigator.languages : [navigator.language];
+  const browserLanguage = browserLanguages
+    .map((item) => item.toLowerCase())
+    .map((item) => supportedLanguages.find((language) => item.startsWith(language.toLowerCase().split("-")[0])))
+    .find(Boolean) || "en";
+  const pathAfterAbout = window.location.pathname.replace(/^\/about\/?/, "");
+  const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
+  const explicitLanguage = supportedLanguages.includes(requestedLanguage) || supportedLanguages.some((language) => (
+    language !== "zh-CN" && (pathAfterAbout === language || pathAfterAbout.startsWith(`${language}/`))
+  ));
   const requestedSource = new URLSearchParams(window.location.search).get("from") || "";
   let referrerSource = "";
   try {
@@ -16,20 +22,33 @@
     ? requestedSource.toLowerCase()
     : (/^[a-z0-9_-]{1,40}$/i.test(referrerSource) ? referrerSource : "promotion");
 
-  if (alternatePath && currentLanguage === "zh" && (storedLanguage === "en" || (!storedLanguage && browserLanguage === "en"))) {
-    window.location.replace(new URL(alternatePath, window.location.href));
-    return;
+  if (!explicitLanguage && browserLanguage !== currentLanguage) {
+    const alternate = document.querySelector(`link[rel="alternate"][hreflang="${browserLanguage}"]`);
+    if (alternate?.href) {
+      window.location.replace(alternate.href);
+      return;
+    }
   }
 
-  if (alternatePath && currentLanguage === "en" && (storedLanguage === "zh" || (!storedLanguage && browserLanguage === "zh"))) {
-    window.location.replace(new URL(alternatePath, window.location.href));
-    return;
-  }
-
-  document.querySelectorAll("[data-language-choice]").forEach((link) => {
-    link.addEventListener("click", () => {
-      localStorage.setItem(preferenceKey, link.dataset.languageChoice);
+  document.querySelectorAll(".language-switcher").forEach((navigation) => {
+    const links = [...navigation.querySelectorAll("[data-language-choice]")];
+    if (!links.length) return;
+    const select = document.createElement("select");
+    select.setAttribute("aria-label", navigation.getAttribute("aria-label") || "Language");
+    links.forEach((link) => {
+      const option = document.createElement("option");
+      option.value = link.href;
+      option.textContent = link.textContent;
+      option.selected = link.getAttribute("aria-current") === "page";
+      option.dataset.language = link.getAttribute("data-language-choice");
+      select.append(option);
     });
+    select.addEventListener("change", () => {
+      const target = new URL(select.value);
+      if (select.selectedOptions[0]?.dataset.language === "zh-CN") target.searchParams.set("lang", "zh-CN");
+      window.location.assign(target);
+    });
+    navigation.replaceChildren(select);
   });
 
   document.querySelectorAll('a[href^="https://t.8ma.co"]').forEach((link) => {
