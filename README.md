@@ -5,7 +5,7 @@
 <p align="center">文件，不必先上传。<br>Files do not need an upload first.</p>
 
 <p align="center">
-  <a href="https://geklabs.github.io/8ma-quick-transfer/"><strong>访问推广站</strong></a>
+  <a href="https://t.8ma.co/about/"><strong>访问推广站</strong></a>
   ·
   <a href="https://t.8ma.co"><strong>立即传文件</strong></a>
 </p>
@@ -17,7 +17,7 @@
 - 中英文产品介绍
 - SEO、GEO 和社交分享元数据
 - 产品 Logo 与公开宣传图
-- GitHub Pages 发布工作流
+- 静态站点页面与公开字体资源
 
 本仓库不包含产品源代码、部署配置、服务器信息、凭据、内部文档或用户数据。
 
