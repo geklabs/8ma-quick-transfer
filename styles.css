@@ -322,6 +322,15 @@ h1 {
   animation-delay: calc(var(--i) * 70ms + 160ms);
 }
 
+.code-digits span:nth-child(1) { --i: 0; }
+.code-digits span:nth-child(2) { --i: 1; }
+.code-digits span:nth-child(3) { --i: 2; }
+.code-digits span:nth-child(4) { --i: 3; }
+.code-digits span:nth-child(5) { --i: 4; }
+.code-digits span:nth-child(6) { --i: 5; }
+.code-digits span:nth-child(7) { --i: 6; }
+.code-digits span:nth-child(8) { --i: 7; }
+
 .object-bottom {
   align-items: flex-end;
 }
