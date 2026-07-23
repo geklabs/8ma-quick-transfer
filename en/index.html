@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en" data-alternate-path="../">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>8ma Quick Transfer | Browser-based peer-to-peer file transfer</title>
+    <meta name="description" content="Send large files between phones and computers without installing an app. 8ma Quick Transfer creates a link, QR code, and temporary 8-character pickup code in your browser.">
+    <meta name="keywords" content="file transfer,large file transfer,peer to peer file transfer,send files between devices,browser file transfer,WebRTC file transfer">
+    <meta name="author" content="8ma Quick Transfer">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="theme-color" content="#1677ff">
+    <link rel="canonical" href="https://geklabs.github.io/8ma-quick-transfer/en/">
+    <link rel="alternate" hreflang="zh-CN" href="https://geklabs.github.io/8ma-quick-transfer/">
+    <link rel="alternate" hreflang="en" href="https://geklabs.github.io/8ma-quick-transfer/en/">
+    <link rel="alternate" hreflang="x-default" href="https://geklabs.github.io/8ma-quick-transfer/">
+    <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/logo.svg">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="../styles.css">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="8ma Quick Transfer">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:title" content="8ma Quick Transfer | Files do not need an upload first">
+    <meta property="og:description" content="Open a browser and move a file between devices with a link, QR code, or temporary 8-character pickup code.">
+    <meta property="og:url" content="https://geklabs.github.io/8ma-quick-transfer/en/">
+    <meta property="og:image" content="https://geklabs.github.io/8ma-quick-transfer/assets/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="8ma Quick Transfer, files do not need an upload first">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="8ma Quick Transfer">
+    <meta name="twitter:description" content="Browser-based file transfer with no app to install">
+    <meta name="twitter:image" content="https://geklabs.github.io/8ma-quick-transfer/assets/social-card.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://geklabs.github.io/8ma-quick-transfer/en/#website",
+            "url": "https://geklabs.github.io/8ma-quick-transfer/en/",
+            "name": "8ma Quick Transfer",
+            "alternateName": "8码快传",
+            "inLanguage": "en",
+            "description": "Browser-based peer-to-peer file transfer with no app to install"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://t.8ma.co/#software",
+            "name": "8ma Quick Transfer",
+            "alternateName": "8码快传",
+            "url": "https://t.8ma.co",
+            "image": "https://geklabs.github.io/8ma-quick-transfer/assets/logo.svg",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "Web browser",
+            "browserRequirements": "A modern browser with WebRTC support; current Chrome or Edge recommended",
+            "isAccessibleForFree": true,
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "featureList": [
+              "Share by link, QR code, or 8-character pickup code",
+              "Browser-based transfer between devices",
+              "Optional discovery on the same Wi-Fi network",
+              "Up to three concurrent receivers",
+              "Transfer progress and integrity verification"
+            ],
+            "sameAs": ["https://github.com/geklabs/8ma-quick-transfer"]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://geklabs.github.io/8ma-quick-transfer/en/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Do I need to install an app?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Senders and receivers can open 8ma Quick Transfer directly in a modern web browser."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are files stored on a server?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "8ma Quick Transfer does not persist file contents. The service helps devices connect, and encrypted WebRTC traffic may be relayed through TURN when a direct connection is not possible."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I send a file to another device?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Choose a file, then share the generated link, QR code, or 8-character pickup code. Keep both browser pages open until the transfer is complete."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <script src="../script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="8ma Quick Transfer promotion site home">
+        <img src="../assets/logo.svg" width="38" height="38" alt="">
+        <span>8ma Quick Transfer</span>
+      </a>
+      <div class="header-actions">
+        <a class="text-link" href="#how-it-works">How it works</a>
+        <nav class="language-switcher" aria-label="Language">
+          <a href="../" lang="zh-CN" hreflang="zh-CN" data-language-choice="zh">中</a>
+          <a href="./" aria-current="page" data-language-choice="en">EN</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">Browser-based peer-to-peer file transfer</p>
+          <h1 id="hero-title">Files do not need an upload first.</h1>
+          <p class="hero-copy">Choose a file and get a link, QR code, and temporary 8-character pickup code. The other device only needs a browser.</p>
+          <a class="primary-cta" href="https://t.8ma.co" rel="noopener">Send a file now</a>
+          <p class="micro-note">No install, no account, free to use</p>
+        </div>
+
+        <div class="code-object" aria-label="An 8-character pickup code and transfer between two devices">
+          <div class="object-top">
+            <span class="object-label">Pickup code</span>
+            <span class="status"><i class="status-dot" aria-hidden="true"></i>Waiting</span>
+          </div>
+          <div class="code-digits" aria-label="8 M A 4 T 2 X 7">
+            <span style="--i: 0">8</span><span style="--i: 1">M</span><span style="--i: 2">A</span><span style="--i: 3">4</span>
+            <span style="--i: 4">T</span><span style="--i: 5">2</span><span style="--i: 6">X</span><span style="--i: 7">7</span>
+          </div>
+          <div class="object-bottom">
+            <div class="device-flow" aria-hidden="true">
+              <div class="device-row"><span>MacBook</span><span>iPhone</span></div>
+              <div class="flow-line"></div>
+              <div class="device-row"><span>Sender</span><span>Receiver</span></div>
+            </div>
+            <div class="file-row">
+              <span class="file-name">year-in-photos.zip</span>
+              <span class="file-size">4.8 GB</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Product highlights">
+        <div class="trust-inner">
+          <div class="trust-item"><strong>0</strong><span>apps to install</span></div>
+          <div class="trust-item"><strong>8</strong><span>characters in a pickup code</span></div>
+          <div class="trust-item"><strong>3</strong><span>people can receive at once</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="how-it-works" aria-labelledby="steps-title">
+        <div class="section-heading">
+          <p class="section-kicker">Three steps</p>
+          <h2 id="steps-title">From one device to the next.</h2>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <span class="step-number">01</span>
+            <h3>Choose the file</h3>
+            <p>Open 8ma Quick Transfer on the sending device. There is no account to create and no cloud drive upload to finish first.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">02</span>
+            <h3>Share one way in</h3>
+            <p>Send the link, show the QR code, or read the 8-character pickup code aloud. It works across a room or across town.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">03</span>
+            <h3>Keep both pages open</h3>
+            <p>The transfer starts when the receiver confirms. Both sides can see speed, time remaining, and each device's status.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="connection-section" aria-labelledby="connection-title">
+        <div class="connection-layout">
+          <div class="connection-copy">
+            <p class="section-kicker">Transfer boundary</p>
+            <h2 id="connection-title">The service helps devices meet. It does not keep your file.</h2>
+            <p>8ma Quick Transfer uses a WebRTC DataChannel to move file data between browsers. The service handles signaling and temporary rooms, not persistent file storage.</p>
+            <p class="boundary-note"><strong>The precise version:</strong> if the devices cannot establish a direct connection, the browser may relay encrypted traffic through TURN. Relaying improves connection success without creating a long-lived downloadable copy.</p>
+          </div>
+          <div class="network-diagram" role="img" aria-label="A sender connects to a receiver over WebRTC, while the service only helps establish the connection">
+            <div class="network-node"><strong>Sending device</strong><span>File selected</span></div>
+            <div class="network-path"><span>WebRTC connection</span></div>
+            <div class="network-node"><strong>Receiving device</strong><span>Browser download</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section facts" aria-labelledby="facts-title">
+        <div class="facts-intro">
+          <p class="section-kicker">Product facts</p>
+          <h2 id="facts-title">When is it useful?</h2>
+          <p>For moving photos, videos, design files, and archives between devices without uploading them to a cloud drive first.</p>
+        </div>
+        <dl class="facts-list">
+          <div class="fact-row"><dt>Access</dt><dd>Runs in the browser with no app install or account registration</dd></div>
+          <div class="fact-row"><dt>Ways to share</dt><dd>Temporary link, QR code, and 8-character alphanumeric pickup code</dd></div>
+          <div class="fact-row"><dt>Nearby devices</dt><dd>Optional discovery on the same Wi-Fi network; keep it off on public networks</dd></div>
+          <div class="fact-row"><dt>Receivers</dt><dd>Up to three people can receive at once, with separate progress for each device</dd></div>
+          <div class="fact-row"><dt>Large files</dt><dd>Up to 100 GB per file in desktop Chrome and Edge; actual results depend on device and network conditions</dd></div>
+          <div class="fact-row"><dt>Recommended setup</dt><dd>Use a current version of Chrome or Edge and keep both pages open during transfer</dd></div>
+        </dl>
+      </section>
+
+      <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="section-heading">
+          <p class="section-kicker">Questions</p>
+          <h2 id="faq-title">What you may want to know first.</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Do I need to install an app?</summary>
+            <div class="faq-answer">No. Senders and receivers can open 8ma Quick Transfer directly in a modern browser. A current version of Chrome or Edge is recommended.</div>
+          </details>
+          <details>
+            <summary>Are files stored on a server?</summary>
+            <div class="faq-answer">File contents are not stored persistently. The service helps devices connect. Encrypted WebRTC traffic may be relayed through TURN on restrictive networks, but this does not create a long-lived file copy.</div>
+          </details>
+          <details>
+            <summary>How do I send a file to another device?</summary>
+            <div class="faq-answer">Choose a file, then share the generated link, QR code, or 8-character pickup code. Keep both pages open until the receiver completes the download.</div>
+          </details>
+          <details>
+            <summary>Can more than one person receive a file?</summary>
+            <div class="faq-answer">Yes. One share supports up to three concurrent receivers, and the sending page shows each device's connection and transfer progress.</div>
+          </details>
+          <details>
+            <summary>Why can a connection fail?</summary>
+            <div class="faq-answer">Peer-to-peer connections can be affected by browser versions, company firewalls, carrier networks, and device sleep policies. Keep the page in the foreground, update the browser, or try another network.</div>
+          </details>
+        </div>
+      </section>
+
+      <section class="final-cta" aria-labelledby="final-title">
+        <div>
+          <h2 id="final-title">Send the next file directly.</h2>
+          <p>No upload queue and no app for the other person to install. Open a browser and start with the file.</p>
+        </div>
+        <a class="primary-cta" href="https://t.8ma.co" rel="noopener">Open 8ma Quick Transfer</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span data-current-year>2026</span> 8ma Quick Transfer</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Usage notes</a>
+        <a href="https://github.com/geklabs/8ma-quick-transfer">GitHub</a>
+      </nav>
+    </footer>
+  </body>
+</html>
