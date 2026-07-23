@@ -1,0 +1,18 @@
+{
+  "name": "8码快传 / 8ma Quick Transfer",
+  "short_name": "8码快传",
+  "description": "无需安装的浏览器点对点文件传输工具",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f8f5ec",
+  "theme_color": "#1677ff",
+  "icons": [
+    {
+      "src": "./assets/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
+
