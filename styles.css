@@ -196,16 +196,16 @@ p {
 }
 
 h1 {
-  max-width: 11ch;
+  max-width: none;
   margin-bottom: 28px;
-  font-size: clamp(44px, 5vw, 72px);
-  line-height: 1;
+  font-size: clamp(40px, 3.6vw, 50px);
+  line-height: 1.06;
   letter-spacing: -0.022em;
   text-wrap: balance;
 }
 
 [lang="en"] h1 {
-  max-width: 11.5ch;
+  max-width: 14ch;
 }
 
 .hero-copy {
@@ -439,6 +439,10 @@ h1 {
   margin-bottom: 64px;
 }
 
+.section-heading h2 {
+  max-width: none;
+}
+
 .section-kicker {
   margin: 0;
   color: var(--blue-deep);
@@ -449,10 +453,10 @@ h1 {
 }
 
 h2 {
-  max-width: 14ch;
+  max-width: 18ch;
   margin-bottom: 0;
-  font-size: clamp(32px, 3.7vw, 52px);
-  line-height: 1.08;
+  font-size: clamp(28px, 2.8vw, 40px);
+  line-height: 1.12;
   letter-spacing: -0.022em;
   text-wrap: balance;
 }
@@ -473,7 +477,7 @@ h2 {
 .step-number {
   color: var(--blue);
   font-family: "Archivo Black", "Arial Black", sans-serif;
-  font-size: 44px;
+  font-size: 36px;
   line-height: 0.9;
   letter-spacing: -0.04em;
 }
@@ -690,7 +694,7 @@ h2 {
 }
 
 .final-cta h2 {
-  max-width: 12ch;
+  max-width: 18ch;
   margin-bottom: 18px;
 }
 
@@ -872,6 +876,17 @@ h2 {
   }
 }
 
+@media (max-width: 1020px) {
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    max-width: 660px;
+  }
+}
+
 @media (max-width: 620px) {
   :root {
     --page: calc(100% - 28px);
@@ -904,7 +919,7 @@ h2 {
 
   h1 {
     margin-bottom: 20px;
-    font-size: clamp(42px, 12vw, 48px);
+    font-size: clamp(34px, 9.5vw, 38px);
   }
 
   .hero-copy {
@@ -969,7 +984,7 @@ h2 {
   }
 
   .step-number {
-    font-size: 34px;
+    font-size: 30px;
   }
 
   .step h3 {
@@ -1008,6 +1023,12 @@ h2 {
 
   .site-footer {
     flex-direction: column;
+  }
+}
+
+@media (min-width: 351px) {
+  [lang="zh-CN"] .hero h1 {
+    white-space: nowrap;
   }
 }
 
