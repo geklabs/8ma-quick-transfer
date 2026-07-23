@@ -23,7 +23,15 @@ jobs:
             curl --fail --silent http://127.0.0.1:8080/sitemap.xml >/dev/null && break
             sleep 1
           done
-          SITE_URL=http://127.0.0.1:8080/ python3 scripts/check-site.py
+          python3 scripts/check-site.py --base-url http://127.0.0.1:8080/ --report local-index-report.json
       - name: Check production
         if: github.event_name != 'push'
-        run: python3 scripts/check-site.py
+        run: python3 scripts/check-site.py --report production-index-report.json
+      - name: Preserve indexing readiness report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: indexing-readiness-${{ github.run_id }}
+          path: "*-index-report.json"
+          if-no-files-found: error
+          retention-days: 90
