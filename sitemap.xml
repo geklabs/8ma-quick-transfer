@@ -2,24 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://geklabs.github.io/8ma-quick-transfer/</loc>
+    <loc>https://t.8ma.co/about/</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://geklabs.github.io/8ma-quick-transfer/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geklabs.github.io/8ma-quick-transfer/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/"/>
   </url>
   <url>
-    <loc>https://geklabs.github.io/8ma-quick-transfer/en/</loc>
+    <loc>https://t.8ma.co/about/en/</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://geklabs.github.io/8ma-quick-transfer/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geklabs.github.io/8ma-quick-transfer/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/"/>
   </url>
-  <url><loc>https://geklabs.github.io/8ma-quick-transfer/privacy.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
-  <url><loc>https://geklabs.github.io/8ma-quick-transfer/terms.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
-  <url><loc>https://geklabs.github.io/8ma-quick-transfer/en/privacy.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
-  <url><loc>https://geklabs.github.io/8ma-quick-transfer/en/terms.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
+  <url><loc>https://t.8ma.co/about/privacy.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
+  <url><loc>https://t.8ma.co/about/terms.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
+  <url><loc>https://t.8ma.co/about/en/privacy.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
+  <url><loc>https://t.8ma.co/about/en/terms.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
 </urlset>
 
