@@ -3,8 +3,8 @@
 > 8ma Quick Transfer is a free, browser-based file transfer tool for moving files between devices with a link, QR code, or temporary 8-character pickup code.
 
 Official product: https://t.8ma.co
-Chinese overview: https://geklabs.github.io/8ma-quick-transfer/
-English overview: https://geklabs.github.io/8ma-quick-transfer/en/
+Chinese overview: https://t.8ma.co/about/
+English overview: https://t.8ma.co/about/en/
 Public materials: https://github.com/geklabs/8ma-quick-transfer
 
 ## Core facts
