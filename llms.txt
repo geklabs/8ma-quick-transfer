@@ -8,6 +8,9 @@ English overview: https://t.8ma.co/about/en/
 Chinese transfer guides: https://t.8ma.co/about/guides/
 How to transfer large files quickly: https://t.8ma.co/about/guides/fast-large-file-transfer/
 Same WiFi file transfer: https://t.8ma.co/about/guides/same-wifi-file-transfer/
+Phone and computer file transfer: https://t.8ma.co/about/guides/phone-computer-file-transfer/
+File transfer without sign-up: https://t.8ma.co/about/guides/file-transfer-without-sign-up/
+Large files beyond messaging apps: https://t.8ma.co/about/guides/send-large-files-without-messaging-app/
 Public materials: https://github.com/geklabs/8ma-quick-transfer
 
 ## Core facts

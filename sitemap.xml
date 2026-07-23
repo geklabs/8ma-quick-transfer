@@ -65,6 +65,54 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/guides/same-wifi-file-transfer/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/guides/same-wifi-file-transfer/"/>
   </url>
+  <url>
+    <loc>https://t.8ma.co/about/guides/phone-computer-file-transfer/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/guides/phone-computer-file-transfer/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/guides/phone-computer-file-transfer/"/>
+  </url>
+  <url>
+    <loc>https://t.8ma.co/about/en/guides/phone-computer-file-transfer/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/guides/phone-computer-file-transfer/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/guides/phone-computer-file-transfer/"/>
+  </url>
+  <url>
+    <loc>https://t.8ma.co/about/guides/file-transfer-without-sign-up/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/guides/file-transfer-without-sign-up/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/guides/file-transfer-without-sign-up/"/>
+  </url>
+  <url>
+    <loc>https://t.8ma.co/about/en/guides/file-transfer-without-sign-up/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/guides/file-transfer-without-sign-up/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/guides/file-transfer-without-sign-up/"/>
+  </url>
+  <url>
+    <loc>https://t.8ma.co/about/guides/send-large-files-without-messaging-app/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/guides/send-large-files-without-messaging-app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/guides/send-large-files-without-messaging-app/"/>
+  </url>
+  <url>
+    <loc>https://t.8ma.co/about/en/guides/send-large-files-without-messaging-app/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://t.8ma.co/about/guides/send-large-files-without-messaging-app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.8ma.co/about/en/guides/send-large-files-without-messaging-app/"/>
+  </url>
   <url><loc>https://t.8ma.co/about/privacy.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
   <url><loc>https://t.8ma.co/about/terms.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
   <url><loc>https://t.8ma.co/about/en/privacy.html</loc><lastmod>2026-07-23</lastmod><priority>0.3</priority></url>
