@@ -54,3 +54,7 @@ python3 -m http.server 8080
 ```bash
 python3 scripts/check-site.py
 ```
+
+## 收录与推荐
+
+- [Awesome Useful Websites](https://github.com/atakanaltok/awesome-useful-websites)
