@@ -23,6 +23,8 @@ Browser transfer without cloud upload (Chinese): https://t.8ma.co/about/guides/b
 Browser transfer without cloud upload (English): https://t.8ma.co/about/en/guides/browser-file-transfer-without-cloud-upload/
 Computer-to-computer transfer (Chinese): https://t.8ma.co/about/guides/computer-to-computer-file-transfer/
 Computer-to-computer transfer (English): https://t.8ma.co/about/en/guides/computer-to-computer-file-transfer/
+Unstable file transfer speed (Chinese): https://t.8ma.co/about/guides/unstable-file-transfer-speed/
+Unstable file transfer speed (English): https://t.8ma.co/about/en/guides/unstable-file-transfer-speed/
 Chinese media kit: https://t.8ma.co/about/press/
 English media kit: https://t.8ma.co/about/en/press/
 Public materials: https://github.com/geklabs/8ma-quick-transfer
@@ -52,6 +54,8 @@ Public materials: https://github.com/geklabs/8ma-quick-transfer
 - Desktop Chrome and Edge support files up to 100 GB, subject to device and network conditions.
 - In supported browsers, interrupted transfers can continue from the verified portion already saved on the receiving device.
 - A current version of Chrome or Edge is recommended.
+- Transfer speed is limited by the slowest current constraint across both devices, their network connection, competing traffic, and local read/write performance.
+- Network rates are commonly shown in megabits per second (Mbps), while transfer speed is commonly shown in megabytes per second (MB/s); 100 Mbps equals 12.5 MB/s before normal overhead.
 
 ## 常见问题
 
@@ -85,9 +89,13 @@ They open the shared link, scan the QR code, or enter the temporary 8-character 
 
 Yes. The product is currently free to use.
 
+### Why can file transfer speed change during a transfer?
+
+Available bandwidth can change when WiFi signal quality, competing traffic, device power state, browser activity, or local read/write performance changes. The transfer cannot exceed the slowest current constraint.
+
 ## Additional languages
 
-The full promotion site, media page, legal pages, and all eight search-intent guides are also available in:
+The full promotion site, media page, legal pages, and all nine search-intent guides are also available in:
 
 - Spanish: https://t.8ma.co/about/es/
 - Arabic: https://t.8ma.co/about/ar/

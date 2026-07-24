@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import os
 import re
 import sys
@@ -29,8 +30,14 @@ SUPPORTED_LANGUAGES = {
     "ja": "ja",
     "ko": "ko",
 }
-REQUIRED_HREFLANGS = {"zh-CN", *SUPPORTED_LANGUAGES}
-EXPECTED_PAGES_PER_LANGUAGE = 13
+LANGUAGE_CODES = {"zh-CN", *SUPPORTED_LANGUAGES}
+REQUIRED_HREFLANGS = {*LANGUAGE_CODES, "x-default"}
+EXPECTED_PAGES_PER_LANGUAGE = 14
+CANONICAL_BASE_URL = "https://t.8ma.co/about/"
+ALLOWED_JSON_LD_URLS = {
+    "https://schema.org",
+    "https://github.com/geklabs/8ma-quick-transfer",
+}
 
 
 class PageFacts(HTMLParser):
@@ -46,7 +53,9 @@ class PageFacts(HTMLParser):
         self.twitter: set[str] = set()
         self.json_ld = 0
         self.h1 = 0
-        self.alternates: set[str] = set()
+        self.alternates: dict[str, str] = {}
+        self.duplicate_alternates: set[str] = set()
+        self.links: set[str] = set()
         self._in_title = False
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
@@ -60,7 +69,12 @@ class PageFacts(HTMLParser):
         elif tag == "link" and values.get("rel") == "canonical":
             self.canonical = values.get("href") or ""
         elif tag == "link" and values.get("rel") == "alternate" and values.get("hreflang"):
-            self.alternates.add(values["hreflang"])
+            language = values["hreflang"]
+            if language in self.alternates:
+                self.duplicate_alternates.add(language)
+            self.alternates[language] = values.get("href") or ""
+        elif tag == "a" and values.get("href"):
+            self.links.add(values["href"])
         elif tag == "meta" and values.get("name") == "description":
             self.description = values.get("content") or ""
         elif tag == "meta" and values.get("name") == "keywords":
@@ -95,8 +109,37 @@ def fetch(url: str, attempts: int = 3) -> tuple[int, bytes]:
             time.sleep(1 << attempt)
     raise RuntimeError("unreachable")
 
-def json_ld_languages(text: str, url: str, errors: list[str]) -> list[str]:
+def page_relative_path(url: str) -> str:
+    path = urlparse(url).path
+    if not path.startswith("/about/"):
+        return ""
+    relative = path.removeprefix("/about/")
+    prefix, separator, remainder = relative.partition("/")
+    if prefix in SUPPORTED_LANGUAGES:
+        relative = remainder if separator else ""
+    if not relative:
+        return "index.html"
+    if relative.endswith("/"):
+        return f"{relative}index.html"
+    return relative
+
+
+def public_page_url(language: str, relative_path: str) -> str:
+    suffix = "" if relative_path == "index.html" else relative_path.removesuffix("index.html")
+    prefix = "" if language == "zh-CN" else f"{language}/"
+    return f"{CANONICAL_BASE_URL}{prefix}{suffix}"
+
+
+def expected_alternates(url: str) -> dict[str, str]:
+    relative_path = page_relative_path(url)
+    expected = {language: public_page_url(language, relative_path) for language in LANGUAGE_CODES}
+    expected["x-default"] = expected["zh-CN"]
+    return expected
+
+
+def inspect_json_ld(text: str, url: str, errors: list[str]) -> tuple[list[str], list[str]]:
     languages: list[str] = []
+    urls: list[str] = []
 
     def walk(value: object) -> None:
         if isinstance(value, dict):
@@ -108,13 +151,29 @@ def json_ld_languages(text: str, url: str, errors: list[str]) -> list[str]:
         elif isinstance(value, list):
             for child in value:
                 walk(child)
+        elif isinstance(value, str) and value.startswith(("https://", "http://")):
+            urls.append(value)
 
     for body in re.findall(r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>([\s\S]*?)</script>', text, re.IGNORECASE):
         try:
             walk(json.loads(body))
         except json.JSONDecodeError as error:
             errors.append(f"{url}: invalid JSON-LD ({error})")
-    return languages
+    return languages, urls
+
+
+def valid_json_ld_url(value: str) -> bool:
+    if value in ALLOWED_JSON_LD_URLS:
+        return True
+    parsed = urlparse(value)
+    return (
+        parsed.scheme == "https"
+        and parsed.hostname == "t.8ma.co"
+        and parsed.port is None
+        and parsed.username is None
+        and parsed.password is None
+        and (parsed.path in ("", "/") or parsed.path.startswith("/about/"))
+    )
 
 
 def main() -> int:
@@ -153,8 +212,26 @@ def main() -> int:
 
     try:
         root = ET.fromstring(sitemap_body)
-        namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
-        urls = [node.text.strip() for node in root.findall("s:url/s:loc", namespace) if node.text]
+        namespace = {
+            "s": "http://www.sitemaps.org/schemas/sitemap/0.9",
+            "xhtml": "http://www.w3.org/1999/xhtml",
+        }
+        urls = []
+        sitemap_alternates: dict[str, dict[str, str]] = {}
+        for url_node in root.findall("s:url", namespace):
+            loc_node = url_node.find("s:loc", namespace)
+            if loc_node is None or not loc_node.text:
+                continue
+            loc = loc_node.text.strip()
+            urls.append(loc)
+            alternates: dict[str, str] = {}
+            for link in url_node.findall("xhtml:link", namespace):
+                language = link.attrib.get("hreflang", "")
+                href = link.attrib.get("href", "")
+                if language in alternates:
+                    errors.append(f"{loc}: duplicate sitemap hreflang {language}")
+                alternates[language] = href
+            sitemap_alternates[loc] = alternates
     except ET.ParseError as error:
         errors.append(f"Invalid sitemap XML: {error}")
         print(errors[-1], file=sys.stderr)
@@ -166,10 +243,16 @@ def main() -> int:
         errors.append(f"Sitemap has {len(urls)} URLs; expected {expected_page_count}")
     if len(urls) != len(set(urls)):
         errors.append("Sitemap contains duplicate URLs")
+    for url in urls:
+        if sitemap_alternates.get(url) != expected_alternates(url):
+            errors.append(f"{url}: sitemap alternate mapping is incorrect")
 
     signals = report["signals"]
     assert isinstance(signals, dict)
-    for asset, required_text in (("robots.txt", "Sitemap:"), ("llms.txt", "8")):
+    for asset, required_text in (
+        ("robots.txt", "Sitemap:"),
+        ("llms.txt", "all nine search-intent guides"),
+    ):
         asset_url = urljoin(base_url, asset)
         try:
             status, body = fetch(asset_url)
@@ -181,9 +264,23 @@ def main() -> int:
             signals[asset] = {"status": 0, "error": str(error)}
             errors.append(f"{asset_url}: {error}")
 
+    manifest: dict[str, object] = {}
+    manifest_url = urljoin(base_url, "translation-manifest.json")
+    try:
+        status, body = fetch(manifest_url)
+        manifest = json.loads(body)
+        signals["translation-manifest.json"] = {"status": status, "validJson": True}
+        if status != 200 or manifest.get("version") != 2 or manifest.get("sourceLocale") != "en":
+            errors.append(f"{manifest_url}: translation manifest metadata is invalid")
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as error:
+        signals["translation-manifest.json"] = {"status": 0, "error": str(error)}
+        errors.append(f"{manifest_url}: {error}")
+
     pages = report["pages"]
     assert isinstance(pages, list)
-    language_page_counts = {language: 0 for language in REQUIRED_HREFLANGS}
+    language_page_counts = {language: 0 for language in LANGUAGE_CODES}
+    page_bodies: dict[str, bytes] = {}
+    page_facts: dict[str, PageFacts] = {}
     for url in urls:
         page_report: dict[str, object] = {"url": url}
         pages.append(page_report)
@@ -206,9 +303,11 @@ def main() -> int:
             errors.append(f"{url}: HTTP {status}")
             page_report["indexable"] = False
             continue
+        page_bodies[url] = body
         text = body.decode("utf-8", errors="replace")
         facts = PageFacts()
         facts.feed(text)
+        page_facts[url] = facts
         page_report.update({
             "title": facts.title,
             "description": facts.description,
@@ -233,9 +332,10 @@ def main() -> int:
             errors.append(f"{url}: expected one h1, found {facts.h1}")
         if "noindex" in facts.robots.lower():
             errors.append(f"{url}: page is marked noindex")
-        if not REQUIRED_HREFLANGS.issubset(facts.alternates):
-            missing = ", ".join(sorted(REQUIRED_HREFLANGS - facts.alternates))
-            errors.append(f"{url}: missing language alternates: {missing}")
+        if facts.duplicate_alternates:
+            errors.append(f"{url}: duplicate language alternates: {', '.join(sorted(facts.duplicate_alternates))}")
+        if facts.alternates != expected_alternates(url):
+            errors.append(f"{url}: HTML alternate mapping is incorrect")
         if "/privacy" not in url and "/terms" not in url:
             if not facts.keywords:
                 errors.append(f"{url}: missing localized long-tail keywords")
@@ -245,11 +345,14 @@ def main() -> int:
                 errors.append(f"{url}: incomplete Twitter Card metadata")
             if facts.json_ld < 1:
                 errors.append(f"{url}: missing structured data")
-            structured_languages = json_ld_languages(text, url, errors)
+            structured_languages, structured_urls = inspect_json_ld(text, url, errors)
             if not structured_languages:
                 errors.append(f"{url}: structured data is missing inLanguage")
             elif any(language != expected_language for language in structured_languages):
                 errors.append(f"{url}: JSON-LD inLanguage is {structured_languages}, expected {expected_language}")
+            for structured_url in structured_urls:
+                if not valid_json_ld_url(structured_url):
+                    errors.append(f"{url}: JSON-LD contains an unapproved URL {structured_url}")
         lowered = text.lower()
         for term in SENSITIVE_TERMS:
             if term in lowered:
@@ -258,6 +361,45 @@ def main() -> int:
     for language, count in language_page_counts.items():
         if count != EXPECTED_PAGES_PER_LANGUAGE:
             errors.append(f"Sitemap has {count} {language} pages; expected {EXPECTED_PAGES_PER_LANGUAGE}")
+
+    expected_relative_paths = {page_relative_path(url) for url in urls}
+    manifest_pages = manifest.get("pages", {}) if isinstance(manifest, dict) else {}
+    if not isinstance(manifest_pages, dict) or set(manifest_pages) != expected_relative_paths:
+        errors.append("Translation manifest page set does not match the sitemap")
+    else:
+        for relative_path, entry in manifest_pages.items():
+            if not isinstance(entry, dict):
+                errors.append(f"Translation manifest entry is invalid: {relative_path}")
+                continue
+            source_url = public_page_url("en", relative_path)
+            source_body = page_bodies.get(source_url)
+            current_source_hash = hashlib.sha256(source_body).hexdigest() if source_body is not None else ""
+            translations = entry.get("translations")
+            if not isinstance(translations, dict) or set(translations) != set(SUPPORTED_LANGUAGES) - {"en"}:
+                errors.append(f"{relative_path}: translation manifest locale set is invalid")
+                continue
+            for language, record in translations.items():
+                if not isinstance(record, dict) or record.get("source") != current_source_hash:
+                    errors.append(f"{source_url}: {language} translation was generated from a different source")
+                    continue
+                translated_url = public_page_url(language, relative_path)
+                translated_body = page_bodies.get(translated_url)
+                expected_hash = record.get("output")
+                if translated_body is None or hashlib.sha256(translated_body).hexdigest() != expected_hash:
+                    errors.append(f"{translated_url}: hash does not match translation manifest")
+
+    guide_paths = {
+        relative_path
+        for relative_path in expected_relative_paths
+        if relative_path.startswith("guides/") and relative_path != "guides/index.html"
+    }
+    for language in LANGUAGE_CODES:
+        index_url = public_page_url(language, "guides/index.html")
+        facts = page_facts.get(index_url)
+        expected_links = {public_page_url(language, relative_path) for relative_path in guide_paths}
+        actual_links = {urljoin(index_url, href) for href in facts.links} if facts else set()
+        if not expected_links.issubset(actual_links):
+            errors.append(f"{index_url}: guide index is missing one or more guide links")
 
     for asset in ("assets/logo.svg", "assets/social-card.png", "assets/promo/social-horizontal-zh.png"):
         url = urljoin(base_url, asset)

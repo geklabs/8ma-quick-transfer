@@ -1,0 +1,398 @@
+{
+  "version": 2,
+  "sourceLocale": "en",
+  "pages": {
+    "index.html": {
+      "translations": {
+        "es": {
+          "source": "3ae31e72850059517d7df728c23ecb02996026d83b8515cec75b0b690109dffd",
+          "output": "513996b2f397b0f82cf2fcb7096c4fbd12bc43453dd1155bf687c97ffc3f80be"
+        },
+        "ar": {
+          "source": "3ae31e72850059517d7df728c23ecb02996026d83b8515cec75b0b690109dffd",
+          "output": "564b46a8a6b40cb891076d32f930de4d1051b5a109bfc54d9c2704e200ed40da"
+        },
+        "hi": {
+          "source": "3ae31e72850059517d7df728c23ecb02996026d83b8515cec75b0b690109dffd",
+          "output": "92918fc4d28d8f83bbe0ef60ec3ffb91b2f0ce4b8557701bb2df58d8d1137e19"
+        },
+        "fr": {
+          "source": "3ae31e72850059517d7df728c23ecb02996026d83b8515cec75b0b690109dffd",
+          "output": "7e4cce3df0cb86d8a1801bbcdddda7fc82a00e74d02aac11d83174b2e83e8211"
+        },
+        "ja": {
+          "source": "3ae31e72850059517d7df728c23ecb02996026d83b8515cec75b0b690109dffd",
+          "output": "6ec4ea37407f4b2ff36bc2fc302773ba8402bbd0e3bcbe252404ded25b18116b"
+        },
+        "ko": {
+          "source": "3ae31e72850059517d7df728c23ecb02996026d83b8515cec75b0b690109dffd",
+          "output": "581801ceee5359c326abd18eade0d0360d9fa63d49c5bffbb9cb8f5ebc953006"
+        }
+      }
+    },
+    "guides/index.html": {
+      "translations": {
+        "es": {
+          "source": "b2a8bb99f88ff3ad6ecc042406faa80d84e02a9eb39675e88fa017e78bf771c0",
+          "output": "d51b5f10fd52e21db1ea88b6a694bcc3f2ba76fe2ae01c2e553bc597cbf532fb"
+        },
+        "ar": {
+          "source": "b2a8bb99f88ff3ad6ecc042406faa80d84e02a9eb39675e88fa017e78bf771c0",
+          "output": "096bfa27e01c462af5b66e620dc557cd7b2a74a2a6e582bd8d07106c20134c08"
+        },
+        "hi": {
+          "source": "b2a8bb99f88ff3ad6ecc042406faa80d84e02a9eb39675e88fa017e78bf771c0",
+          "output": "12c31e03d136244eae5594a863228d537836308b8b74ebda9144cd80b534fb26"
+        },
+        "fr": {
+          "source": "b2a8bb99f88ff3ad6ecc042406faa80d84e02a9eb39675e88fa017e78bf771c0",
+          "output": "b20ee2e1304b427a6768e68b775578cb4f6694d9c799e0094b3c90e7109d4387"
+        },
+        "ja": {
+          "source": "b2a8bb99f88ff3ad6ecc042406faa80d84e02a9eb39675e88fa017e78bf771c0",
+          "output": "1b5fc2cdf65e5e37b1e22099070da2bfe2ca9d18b3970482576144673eb35387"
+        },
+        "ko": {
+          "source": "b2a8bb99f88ff3ad6ecc042406faa80d84e02a9eb39675e88fa017e78bf771c0",
+          "output": "bc5413cacaca41e119c1b8d2cc032c647e0259eeb81f09ed9e70195ce7cef100"
+        }
+      }
+    },
+    "guides/fast-large-file-transfer/index.html": {
+      "translations": {
+        "es": {
+          "source": "55f1ceafebe41884f8721db17ae69d30de218b4a0ba1bcaebba35cf5a4038e1d",
+          "output": "990f3f59932cc965decfdd6868a8be7bb064f9a0929ed69c0dd63d2d0580aa98"
+        },
+        "ar": {
+          "source": "55f1ceafebe41884f8721db17ae69d30de218b4a0ba1bcaebba35cf5a4038e1d",
+          "output": "f538f5044084b710e8d781eb7642403914c8ac32af10a69150629b20720c0ae6"
+        },
+        "hi": {
+          "source": "55f1ceafebe41884f8721db17ae69d30de218b4a0ba1bcaebba35cf5a4038e1d",
+          "output": "ca450b754d9e5a87b88166353bf0646f58b454ad607d52c372ba3d20cadabd81"
+        },
+        "fr": {
+          "source": "55f1ceafebe41884f8721db17ae69d30de218b4a0ba1bcaebba35cf5a4038e1d",
+          "output": "58ba86afb7436499fd238945aedbba86f094a8cce39705d35bcf611e1ce1e2e6"
+        },
+        "ja": {
+          "source": "55f1ceafebe41884f8721db17ae69d30de218b4a0ba1bcaebba35cf5a4038e1d",
+          "output": "6ae823385957f5a88a56a3716c22937e8cb744efc3d1f61fc105cd518e47b549"
+        },
+        "ko": {
+          "source": "55f1ceafebe41884f8721db17ae69d30de218b4a0ba1bcaebba35cf5a4038e1d",
+          "output": "a1643670186eee401851a61417397c4ee265b60a3ae70fb1f2582c16f2dfcc54"
+        }
+      }
+    },
+    "guides/same-wifi-file-transfer/index.html": {
+      "translations": {
+        "es": {
+          "source": "fbe445d3c329528c4b16338c9d31576a99099950ad60bb9ffcf3471f7abd27a1",
+          "output": "212fc404ac129adc3f1e0dc08991bb9e75905f482a9682d85d7d0b8cb3502646"
+        },
+        "ar": {
+          "source": "fbe445d3c329528c4b16338c9d31576a99099950ad60bb9ffcf3471f7abd27a1",
+          "output": "aa7e4ac498ac4a4fc6d904fd94de21d1b7e6063491eee10da8e2fee99064b5cd"
+        },
+        "hi": {
+          "source": "fbe445d3c329528c4b16338c9d31576a99099950ad60bb9ffcf3471f7abd27a1",
+          "output": "2f72eb68d8c1cc3226a7f9bc2e57b7471f8cb4da2ee4ee5089eea34e22cacc33"
+        },
+        "fr": {
+          "source": "fbe445d3c329528c4b16338c9d31576a99099950ad60bb9ffcf3471f7abd27a1",
+          "output": "297b6190b3ff5a43819fce03165bb10f2afe3f94816cfdebd89bc078fd322e72"
+        },
+        "ja": {
+          "source": "fbe445d3c329528c4b16338c9d31576a99099950ad60bb9ffcf3471f7abd27a1",
+          "output": "de9f72f4201407a8ba1fd6d659f8a2fa1bd5bd67784d6a894a54a66d87f8a769"
+        },
+        "ko": {
+          "source": "fbe445d3c329528c4b16338c9d31576a99099950ad60bb9ffcf3471f7abd27a1",
+          "output": "b3a66d90e10e8baabd661de84eafb047b5cad4a254930757544e64e8ed176a40"
+        }
+      }
+    },
+    "guides/phone-computer-file-transfer/index.html": {
+      "translations": {
+        "es": {
+          "source": "276dc90ecc386460ec5bedcae1a4f50ebf58bb7d57a029ef3223606406a58a15",
+          "output": "00b4617e9addc3db0b0760a7b3eee98d1889984593882ce1513992729f5d2963"
+        },
+        "ar": {
+          "source": "276dc90ecc386460ec5bedcae1a4f50ebf58bb7d57a029ef3223606406a58a15",
+          "output": "a6c8064d3ce8f6950695e4f2d2acde4cc88ee36c1e4c193b588c1ea9914001f9"
+        },
+        "hi": {
+          "source": "276dc90ecc386460ec5bedcae1a4f50ebf58bb7d57a029ef3223606406a58a15",
+          "output": "d8bfb7ad3d95508890b0d94ee79157be695a290dfc5b2777a91e8fd901834d3a"
+        },
+        "fr": {
+          "source": "276dc90ecc386460ec5bedcae1a4f50ebf58bb7d57a029ef3223606406a58a15",
+          "output": "e1d3f049f6aff9d63dd0af54aadae372e8527e8852fd551643368c7befdad501"
+        },
+        "ja": {
+          "source": "276dc90ecc386460ec5bedcae1a4f50ebf58bb7d57a029ef3223606406a58a15",
+          "output": "03c10dad0d750e2ed870a7732f4da224b922c5167dee52e69802d51f09a897d2"
+        },
+        "ko": {
+          "source": "276dc90ecc386460ec5bedcae1a4f50ebf58bb7d57a029ef3223606406a58a15",
+          "output": "a6a3a03c544336a3e3b9a079c2b5b9816d8a397ff547a919162ec952e9bc9e93"
+        }
+      }
+    },
+    "guides/file-transfer-without-sign-up/index.html": {
+      "translations": {
+        "es": {
+          "source": "11303d097ab7af0e061ac689c497330599f3f8ff077cbd64d71253b2dcc962fc",
+          "output": "1b04762aa867e3952e3646594ac11e22cabee31b3c9904424d53b594db5b5c46"
+        },
+        "ar": {
+          "source": "11303d097ab7af0e061ac689c497330599f3f8ff077cbd64d71253b2dcc962fc",
+          "output": "120953cea359bb4c1754ab9be40323f3090a2d3692f45f94efc15302380b37c0"
+        },
+        "hi": {
+          "source": "11303d097ab7af0e061ac689c497330599f3f8ff077cbd64d71253b2dcc962fc",
+          "output": "56212794ee187bf05cc6f1521bf12e61b401836d9e0a1a9f26ac13339472d918"
+        },
+        "fr": {
+          "source": "11303d097ab7af0e061ac689c497330599f3f8ff077cbd64d71253b2dcc962fc",
+          "output": "bf512fffaa85fffc775bfea73b2d657432eab1b54905fbbd676787bc7c4ccded"
+        },
+        "ja": {
+          "source": "11303d097ab7af0e061ac689c497330599f3f8ff077cbd64d71253b2dcc962fc",
+          "output": "33686898cf2ed25c2df06b1af3e655e6d5b13cb02138c5d2cc15cf0a51299010"
+        },
+        "ko": {
+          "source": "11303d097ab7af0e061ac689c497330599f3f8ff077cbd64d71253b2dcc962fc",
+          "output": "fcb9a7074dbb6cf04cd6e818a10afd2a469a4b9ccad0091ff6223c4ba81d9c81"
+        }
+      }
+    },
+    "guides/send-large-files-without-messaging-app/index.html": {
+      "translations": {
+        "es": {
+          "source": "df5a06ee63162d816f8a33dd81f40c5e588b419200098e12ee82130a96dbbf42",
+          "output": "ac5435db9208287a00dccec559fcfdd4c01b00576ab5edabb0fe64a8498b20b3"
+        },
+        "ar": {
+          "source": "df5a06ee63162d816f8a33dd81f40c5e588b419200098e12ee82130a96dbbf42",
+          "output": "3390534eb007af57f914b9bae55dfd13f0508ab1e0aff14bdcdacddfcfd95533"
+        },
+        "hi": {
+          "source": "df5a06ee63162d816f8a33dd81f40c5e588b419200098e12ee82130a96dbbf42",
+          "output": "f3ee5b3e5051d5cdc1e4e6c7664e3af44443800ee62f8ae85b3b5984c8c2c121"
+        },
+        "fr": {
+          "source": "df5a06ee63162d816f8a33dd81f40c5e588b419200098e12ee82130a96dbbf42",
+          "output": "538fce08c66fab63777ede7f9f11baf3c80a45abaa0f498fdf5b0c0072de3764"
+        },
+        "ja": {
+          "source": "df5a06ee63162d816f8a33dd81f40c5e588b419200098e12ee82130a96dbbf42",
+          "output": "39ab6e1632fc95afa4dee5e27105a934cf7d844f2ebca8aacb639ee8d25d6bb2"
+        },
+        "ko": {
+          "source": "df5a06ee63162d816f8a33dd81f40c5e588b419200098e12ee82130a96dbbf42",
+          "output": "52cb843bae03dc4e267fd37224f95e6fdd79fb894ccdc3e0bd60dd0f1e5088d6"
+        }
+      }
+    },
+    "guides/resume-interrupted-file-transfer/index.html": {
+      "translations": {
+        "es": {
+          "source": "39260ba339a1642d597f044dde5139dc267b6021a1be98c160de375265b3322d",
+          "output": "98cf5d00b91b666a8ad42dbfefb18a10f4f246dbc2e511544a4583997d1a800d"
+        },
+        "ar": {
+          "source": "39260ba339a1642d597f044dde5139dc267b6021a1be98c160de375265b3322d",
+          "output": "d80e7ead7ae58b4ad02eca62dd098bf97678c5750b57b87b14a62bfcbbeef10b"
+        },
+        "hi": {
+          "source": "39260ba339a1642d597f044dde5139dc267b6021a1be98c160de375265b3322d",
+          "output": "7cc61890151632841f409a8cd1d8c7e89b9b9850c29248d66b9d295fc3a5ae8a"
+        },
+        "fr": {
+          "source": "39260ba339a1642d597f044dde5139dc267b6021a1be98c160de375265b3322d",
+          "output": "27768eb4441bb73191f86658502fcc9ea9f2322a6a5ed42ee058288e61a14174"
+        },
+        "ja": {
+          "source": "39260ba339a1642d597f044dde5139dc267b6021a1be98c160de375265b3322d",
+          "output": "95d6510c07f6ed00969f33f181a2897002b655bac37fa2cce35ce751c83f94a0"
+        },
+        "ko": {
+          "source": "39260ba339a1642d597f044dde5139dc267b6021a1be98c160de375265b3322d",
+          "output": "b708e3fa2a38df56f03716442be38188612ea8af36b072a18b09b9e84af233ca"
+        }
+      }
+    },
+    "guides/browser-file-transfer-without-cloud-upload/index.html": {
+      "translations": {
+        "es": {
+          "source": "b6a72d7ff98ced5b8ea7c596d860509af0905bec4bb056b2812dedea932b5c8c",
+          "output": "e90a9cf9bc6bbeb883435816799076d04741c3eeac96b6d4764a921d3271c303"
+        },
+        "ar": {
+          "source": "b6a72d7ff98ced5b8ea7c596d860509af0905bec4bb056b2812dedea932b5c8c",
+          "output": "b3557b85bfb0a0c3f410cde23cbe2b98e99f2e0a8af653fac18e960cb3180c96"
+        },
+        "hi": {
+          "source": "b6a72d7ff98ced5b8ea7c596d860509af0905bec4bb056b2812dedea932b5c8c",
+          "output": "acef4f433f41ad681c025d60a458aa4a8d56dd52f6867d0ceff882da7f5e2719"
+        },
+        "fr": {
+          "source": "b6a72d7ff98ced5b8ea7c596d860509af0905bec4bb056b2812dedea932b5c8c",
+          "output": "5fbe1f846208535216d09c9e585152acdb96ba3d4e4d6aaa62afc83d5caf9434"
+        },
+        "ja": {
+          "source": "b6a72d7ff98ced5b8ea7c596d860509af0905bec4bb056b2812dedea932b5c8c",
+          "output": "d87dcd038a6dac20a1d0007f01d640ab4486a62c580560bdbedb976f2a6de0b7"
+        },
+        "ko": {
+          "source": "b6a72d7ff98ced5b8ea7c596d860509af0905bec4bb056b2812dedea932b5c8c",
+          "output": "2b953d5dc76fd1b35ed20363103dae0c26b6b0c037e013aa867d744b6a2d91cf"
+        }
+      }
+    },
+    "guides/computer-to-computer-file-transfer/index.html": {
+      "translations": {
+        "es": {
+          "source": "12cb919d7c1281cb919660f6fbf798bba25e0a7b84b2f690d713f79f0316076b",
+          "output": "0a226465b88608cb0e3e1db3906c607a9596c4aec33b5d06c736314a8e3b1236"
+        },
+        "ar": {
+          "source": "12cb919d7c1281cb919660f6fbf798bba25e0a7b84b2f690d713f79f0316076b",
+          "output": "885782160d1339c0d27e7b3b5f5679d27d2899f715f63d7edd9dbf54401e3d3b"
+        },
+        "hi": {
+          "source": "12cb919d7c1281cb919660f6fbf798bba25e0a7b84b2f690d713f79f0316076b",
+          "output": "66be12f91c0095136812a92d7b2b9cc81358fdca0700eeee61317e059e076c8c"
+        },
+        "fr": {
+          "source": "12cb919d7c1281cb919660f6fbf798bba25e0a7b84b2f690d713f79f0316076b",
+          "output": "609f040dcdb701afbd05f66afbbfcfbde0e32840ffbb7b41b9e5f14627c3c331"
+        },
+        "ja": {
+          "source": "12cb919d7c1281cb919660f6fbf798bba25e0a7b84b2f690d713f79f0316076b",
+          "output": "52498dba78351601cf04396af6bdea80e2957287c727319d811e401334b9764c"
+        },
+        "ko": {
+          "source": "12cb919d7c1281cb919660f6fbf798bba25e0a7b84b2f690d713f79f0316076b",
+          "output": "ba22d86776284f9ee9421f3ebdf05b9e17cfe32de0e9c73bf092396ec50a599d"
+        }
+      }
+    },
+    "guides/unstable-file-transfer-speed/index.html": {
+      "translations": {
+        "es": {
+          "source": "2d81dd02c201b430de70a5fbb23a6d70b69fe096e0da03144e7a27523dfcc227",
+          "output": "777b6d7f7054ec39b9e7be2b44b468f07611df2638a057cef5b6d588d936b817"
+        },
+        "ar": {
+          "source": "2d81dd02c201b430de70a5fbb23a6d70b69fe096e0da03144e7a27523dfcc227",
+          "output": "73abeec0bcc08173d7998e3f5c5326b792ede12b9d27ba6f08fb0b67221b72ef"
+        },
+        "hi": {
+          "source": "2d81dd02c201b430de70a5fbb23a6d70b69fe096e0da03144e7a27523dfcc227",
+          "output": "babfd8c9a3416de10cfc14ec3c2e1b033d8d7107b530633b394f1470ec9bb9dc"
+        },
+        "fr": {
+          "source": "2d81dd02c201b430de70a5fbb23a6d70b69fe096e0da03144e7a27523dfcc227",
+          "output": "d9a2eb0f94002a3b77de680b325e6cec3f3607a14a8b596a3e12f959f03e5ad4"
+        },
+        "ja": {
+          "source": "2d81dd02c201b430de70a5fbb23a6d70b69fe096e0da03144e7a27523dfcc227",
+          "output": "16dc5de6e446215ea35716b15ccf69ef2969a5c652effa7a90f7f47062f817a1"
+        },
+        "ko": {
+          "source": "2d81dd02c201b430de70a5fbb23a6d70b69fe096e0da03144e7a27523dfcc227",
+          "output": "cfdbae355460a98961d1519fec28ebdb4461f88d0c81396edf31f5c831c94503"
+        }
+      }
+    },
+    "press/index.html": {
+      "translations": {
+        "es": {
+          "source": "18f7beaa1e272ac78b6e86d655388c7200d26a16eb272275508896bfbb88cc19",
+          "output": "7a98b47e8121f130972d5ea1cc7b16bde64c7fd7d5be97470d7a83284ae657a2"
+        },
+        "ar": {
+          "source": "18f7beaa1e272ac78b6e86d655388c7200d26a16eb272275508896bfbb88cc19",
+          "output": "f7ca43a7f4e4c6634642c16759c4168ced70ff8c61e4445d5e7647a15583d699"
+        },
+        "hi": {
+          "source": "18f7beaa1e272ac78b6e86d655388c7200d26a16eb272275508896bfbb88cc19",
+          "output": "e20e8c8757850b63b83aea57f45851c02adeca03e8878a36b17a3027f4dc5ebc"
+        },
+        "fr": {
+          "source": "18f7beaa1e272ac78b6e86d655388c7200d26a16eb272275508896bfbb88cc19",
+          "output": "8924e701053e1a8b11e3b84a4cd9d496234db99e46717139c6318efc74de0906"
+        },
+        "ja": {
+          "source": "18f7beaa1e272ac78b6e86d655388c7200d26a16eb272275508896bfbb88cc19",
+          "output": "88d24f0a8e3c709cff86593ddb3502be6c7b7d57dd69953f6b2e8e0849dd56cc"
+        },
+        "ko": {
+          "source": "18f7beaa1e272ac78b6e86d655388c7200d26a16eb272275508896bfbb88cc19",
+          "output": "ac5f156801017d06372ff476881d0a0f42c5ed9592369a9960aa51b7ab1747e9"
+        }
+      }
+    },
+    "privacy.html": {
+      "translations": {
+        "es": {
+          "source": "0fe552e1f0683c2c4b5ead6346bab344889e8860cd47d3819095247ad2721800",
+          "output": "04a00d24115c17afff8177ce7b47709e46a5f5f89269e99b70e6ba9984695172"
+        },
+        "ar": {
+          "source": "0fe552e1f0683c2c4b5ead6346bab344889e8860cd47d3819095247ad2721800",
+          "output": "27412ef0436e4cc8e07bcca16e515d91ca2a45c14b2954e2dc38028c60d74b4a"
+        },
+        "hi": {
+          "source": "0fe552e1f0683c2c4b5ead6346bab344889e8860cd47d3819095247ad2721800",
+          "output": "423dfd3fad32aa9e7b89d4425c223c8c2aa084f3a6cd69c8fa6c9fa73b20ec53"
+        },
+        "fr": {
+          "source": "0fe552e1f0683c2c4b5ead6346bab344889e8860cd47d3819095247ad2721800",
+          "output": "00795914b95f30ed185748116f5e34c3ace1f06bc002b292eb4d6b2a0fae5133"
+        },
+        "ja": {
+          "source": "0fe552e1f0683c2c4b5ead6346bab344889e8860cd47d3819095247ad2721800",
+          "output": "2efa744955c0bc07b94308114bd2e4d5dfdb06ab48c6e89de21326fc7064e7b6"
+        },
+        "ko": {
+          "source": "0fe552e1f0683c2c4b5ead6346bab344889e8860cd47d3819095247ad2721800",
+          "output": "7a445be7e6f7782600f585b66924bc8e74630fed9bdd499bfad0175d86ec5635"
+        }
+      }
+    },
+    "terms.html": {
+      "translations": {
+        "es": {
+          "source": "355c207dc97c459685adb979c8495152790c5745ad4649648b188603bb61da10",
+          "output": "c5b2b15e07ce4259f147097756105cf86495a2313784911dfdef23dcba9ab9a5"
+        },
+        "ar": {
+          "source": "355c207dc97c459685adb979c8495152790c5745ad4649648b188603bb61da10",
+          "output": "672c2d6ba2f621bba2b7616cb5dcf385f198b9110e5a2324a4e0da129ca98681"
+        },
+        "hi": {
+          "source": "355c207dc97c459685adb979c8495152790c5745ad4649648b188603bb61da10",
+          "output": "91abd4cb9d0f23d46405951108b30c9cec503d7650d37e86dcc9d37780f45064"
+        },
+        "fr": {
+          "source": "355c207dc97c459685adb979c8495152790c5745ad4649648b188603bb61da10",
+          "output": "b75709d44434e7985af45cd29d79ac1da973210ad4f61836bed1ce8e50170a28"
+        },
+        "ja": {
+          "source": "355c207dc97c459685adb979c8495152790c5745ad4649648b188603bb61da10",
+          "output": "02113a53abce0898a9b4555ad5d36ad5d18c2932c384d31a71c8c48290289237"
+        },
+        "ko": {
+          "source": "355c207dc97c459685adb979c8495152790c5745ad4649648b188603bb61da10",
+          "output": "3ed41acec9fe436756118a66691a72e0a404046ed1abefcc2b626eaf145b5e95"
+        }
+      }
+    }
+  }
+}
